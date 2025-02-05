@@ -1,0 +1,1342 @@
+[
+    {
+        "version": "0.56.0",
+        "changes": [
+            "New lobby!",
+            "2 awesome new item packs!",
+            "Switched to the Khronos OpenXR loader for all platforms.",
+            "Fixed controller issues on Pico devices (caused by a recent Pico OS update)."
+        ]
+    },
+    {
+        "version": "0.55.0",
+        "changes": [
+            "Night version of the christmas lobby.",
+            "Added consumables as a new paid item type. You can now buy interactive fireworks, sparklers and snappers in the shop for one time use.",
+            "Consumables may have some bugs, so I made them very cheap. Use at your own risk."
+        ]
+    },
+    {
+        "version": "0.54.1",
+        "changes": [
+            "It is no longer possible to grab the pause menu while jumping with both hands (this prevents a fly bug).",
+            "Fixed a crash when opening the pause menu while switching to the lobby.",
+            "Fixed coins showing up in the owned items list.",
+            "Fixed favoriting a level from the pause menu home tab crashing if you already have 100 favorites.",
+            "No longer using compositor layers when using the SteamVR runtime, fxing the UI being broken on steam (but reducing the rendering quality a bit).",
+            "Fixed using the pause menu while holding it inside the level editor.",
+            "Verifiers can verify levels from within the game again.",
+            "Lobby settings are only shown to the host.",
+            "Fixed the black dot in the center of the sun."
+        ]
+    },
+    {
+        "version": "0.54.0",
+        "changes": [
+            "New cosmetic items.",
+            "New lobby with 10 hidden coin stacks (worth 5 coins each).",
+            "New level selection UI in the lobby.",
+            "New pause menu.",
+            "New frost block that behaves like ice but allows to jump on it while keeping the momentum.",
+            "Fixed a crash related to emojis in the player name."
+        ]
+    },
+    {
+        "version": "0.53.0",
+        "changes": [
+            "New Lobby!",
+            "Viking cosmetics!",
+            "When taking pictures with the camera, other players can now see you hold it."
+        ]
+    },
+    {
+        "version": "0.52.3",
+        "changes": [
+            "Updated GAB trophy checkpoint with the GAB2 winners!",
+            "Added participation badge for GAB2! (You should have yours on monday at the latest, but hopefully much sooner)",
+            "You can now press A on your controller while using the in-game camera to take a picture without having to point at it!",
+            "A couple smaller bug fixes."
+        ]
+    },
+    {
+        "version": "0.52.2",
+        "changes": [
+            "Fixed a bug causing ghost blocks that didn't go away until restarting.",
+            "Fixed coins and cosmetics items staying around in the level sometimes.",
+            "Fixed not being able to open the purchase flow again after closing it using the quest button.",
+            "Fixed a problem with menu sounds being too loud or too quiet after leaving the editor.",
+            "Fixed button to collect tips and buy coins not working from verification and tip confirmation views."
+        ]
+    },
+    {
+        "version": "0.52.1",
+        "changes": [
+            "Fixed a crash that could happen if someone with the skeleton head joins a lobby.",
+            "Fixed the zombie hand fingernails."
+        ]
+    },
+    {
+        "version": "0.52.0",
+        "changes": [
+            "New lobby!",
+            "New halloween items!",
+            "New tab in the level editor, listing all signs with the ability to jump to them.",
+            "Added support for portrait mode to the in-game camera.",
+            "The in-game camera now allows to directly send images to the GRAB discord (discord.gg/slindev).",
+            "Visor now lights up also for your own player in the camera, but only if not alone in a lobby.",
+            "Fixed a glitch that allowed placing checkpoints on lava in some situations.",
+            "Fixed button audio in the editor sometimes coming from the wrong position.",
+            "Camera snapping in the editor now enforces a minimum value to be less confusing.",
+            "New GAB - Join the GRAB discord for more information about the build competition!"
+        ]
+    },
+    {
+        "version": "0.51.0",
+        "changes": [
+            "New lobby!",
+            "New cosmetics pack!",
+            "You can now use the in-game camera at any time to save pictures to your platforms camera roll!",
+            "The camera can now zoom, snap and stay in one spot.",
+            "Instead of 50 weekly coins, everyone now gets 10 daily coins.",
+            "The weekly rotation is now a daily rotation.",
+            "Player body rotations and positions relative to the head are now a bit more dynamic and look better overall.",
+            "Fixed sounds on menus in the level editor often being too quiet."
+        ]
+    },
+    {
+        "version": "0.50.1",
+        "changes": [
+            "Added option to make colored lava transparent.",
+            "Specularity is now much stronger (using a darker color reduces it).",
+            "Fixed favorite colors not syncing correctly when adding new ones between lava and colored blocks.",
+            "Fixed gravity block particles turning black when effected by fog.",
+            "Fixed gravity block particles not immediately disappearing after deleting the block in the editor.",
+            "Fixed report player menu not working when opened from the Quest overlay.",
+            "Fixed animations for some older cosmetic items."
+        ]
+    },
+    {
+        "version": "0.50.0",
+        "changes": [
+            "New lobby with 5 hidden Coin stacks, each worth 20 Coins!",
+            "Added weekly changing items to the shop. These are randomly selected for every player and you can pay to reroll them.",
+            "Added support for transparent color blocks (limited to 20 per level).",
+            "Added a cone shape.",
+            "The color of lava blocks can now be changed.",
+            "Increased default maximum level complexity to 2000.",
+            "Added an \"advanced\" color picker to more freely select colors.",
+            "Restructured the player customization.",
+            "Added support for separate grapples.",
+            "Added support for left and right badges.",
+            "Added support for backpacks.",
+            "Added support for different bodies.",
+            "Updated logo and splash screen.",
+            "Added a setting to make the game remember your position and rotation snap setting between levels and sessions.",
+            "Added a setting to disable the new addition position snap steps.",
+            "Part picker in the editor now shows 4 items per row (was 3 before).",
+            "The currently active object on the part picker is now highlighted.",
+            "Several smaller performance improvements."
+        ]
+    },
+    {
+        "version": "0.47.0",
+        "changes": [
+            "Added the Summer Pack!",
+            "Added a free discord badge that you can claim after joining discord.gg/slindev",
+            "New lobby!",
+            "Fixed a black screen issue in fling mode that could be easily caused with a shaking animation and strong gravity.",
+            "Fixed the game not shutting down correctly when you close it.",
+            "Improved behavior in case of connection issues."
+        ]
+    },
+    {
+        "version": "0.46.4",
+        "changes": [
+            "Renamed \"Start Lobby\" to \"Create Lobby\".",
+            "Added some indicators for new players to press the \"Create Lobby\" button.",
+            "Added panels into the lobby for all players, explaining what the host can do there.",
+            "Fixed a crash that could happen when refreshing the server list and closing it before it finishes loading."
+        ]
+    },
+    {
+        "version": "0.46.3",
+        "changes": [
+            "Unfortunately the trading of modded colors has gotten a bit out of hand with a lot of scammy behaviour and misinformation going around. As a consequence you will no longer be able to favorite modded colors. But you can keep using those you already have and they will keep working in levels.",
+            "More smaller crash fixes."
+        ]
+    },
+    {
+        "version": "0.46.2",
+        "changes": [
+            "Fixed a crash that would happen when switching to play mode while animating and holding a block at the time.",
+            "Fixed start and stop going crazy when grabbed in editor.",
+            "Fixed undo causing all kind of issues if selecting a block while undoing it's creation."
+        ]
+    },
+    {
+        "version": "0.46.1",
+        "changes": [
+            "Fixed a common crash caused by a race condition when asynchronously creating GPU resources.",
+            "Changed how clicks are propagated through the UI system to be more flexible.",
+            "Changed how descriptor sets are cached, resulting in more reuse and better performance.",
+            "Changed how some UI data is send to the GPU for less overhead and improved performance."
+        ]
+    },
+    {
+        "version": "0.46.0",
+        "changes": [
+            "New lobby!",
+            "Added a new \"Adventure Pack\".",
+            "Added a free \"Pride Pin\".",
+            "Added cosmetics for GAB winners and participants. It will take a day or two after the update until everyone has them!"
+        ]
+    },
+    {
+        "version": "0.45.1",
+        "changes": [
+            "Added 10 slots for custom colors for colored blocks in the editor.",
+            "Improved snapping in the editor, making it easier to align objects.",
+            "Performance improvements with lots of blocks."
+        ]
+    },
+    {
+        "version": "0.45.0",
+        "changes": [
+            "New lobby with 3 stacks of GRAB Coins!",
+            "New cosmetics pack!"
+        ]
+    },
+    {
+        "version": "0.44.5",
+        "changes": [
+            "The level browser now supports filtering by tags.",
+            "You can now assign up to two tags for your level on the save screen in editor. Saving will immediately update the tags on the server if it was already published.",
+            "Reduced the maximum number of characters for level descriptions from 300 to 200.",
+            "Added a warning to not ask for tips on the level publish confirmation. DO NOT ASK TO BE TIPPED IN YOUR LEVELS!",
+            "Moved the \"Submit for Verification\" button out of the save menu into the pause menu of the host in editor to make it easier to find.",
+            "\"No Legs\" mode is now called \"Fling\" mode.",
+            "The game now pings the server every 5 minutes to get better analytics data on concurrent user numbers."
+        ]
+    },
+    {
+        "version": "0.44.4",
+        "changes": [
+            "Levels can now be submitted for verification (to get the ok stamp) from the save screen in the editor. This costs a small fee that may change depending on the number of levels that get submitted.",
+            "The community guidelines now include some additional information about level verification.",
+            "Changed some wording around publishing levels. It is now just called \"Publish\" and \"Play\" instead of \"Verify\". This is also reflected in the server list filters.",
+            "Fixed level add buttons in the lobby being visible above the in-game menu.",
+            "Updated to latest EOS-SDK (used for networking and voice chat)."
+        ]
+    },
+    {
+        "version": "0.44.3",
+        "changes": [
+            "Fixed setting level images.",
+            "Fixed several crashes."
+        ]
+    },
+    {
+        "version": "0.44.2",
+        "changes": [
+            "Added option to open published levels that are not saved on the headset anymore in the editor.",
+            "Added option to filter levels in the editor by published and unpublished.",
+            "Added a search for your levels in editor.",
+            "You can now complete delete a level from the \"Save\" screen.",
+            "Fixed a bug with autosaves getting overwritten when they shouldn't.",
+            "Fixed a rare crash that could happen with coins in the level while loading a new level."
+        ]
+    },
+    {
+        "version": "0.44.1",
+        "changes": [
+            "The amount of levels and players asking for tips has gotten a bit out of hand and as a result I updated the community guidelines to no longer allow asking for tips in any way. Any new cases after this update will get warnings or bans. Levels that already did it before will be removed if not updated (but without anyone getting bans for it). So please update your levels if needed.",
+            "Added new report options to report levels and users: Asking for Tips.",
+            "Fixed some crashes."
+        ]
+    },
+    {
+        "version": "0.44.0",
+        "changes": [
+            "Added support for tipping the creator of a level!",
+            "Levels can now be filtered by difficulty!",
+            "The \"Random\" button will now only add levels with the selected difficulty.",
+            "Fixed T-Posing on ice giving a lot of extra speed."
+        ]
+    },
+    {
+        "version": "0.43.2",
+        "changes": [
+            "Fixed T-Posing.",
+            "Performance improvements.",
+            "The item lists will now show the objects you already own at the top, making it easier to find and equip them.",
+            "The shop will now hide packs on the front page if you already own them (unless you own all of them) and show packs you don't own instead."
+        ]
+    },
+    {
+        "version": "0.43.1",
+        "changes": [
+            "Changed wording in the main menu.",
+            "Removed \"Next Level\" button when in the tutorial.",
+            "Tweaked the pilot head."
+        ]
+    },
+    {
+        "version": "0.43.0",
+        "changes": [
+            "New Lobby!",
+            "New cosmetics pack!",
+            "The shop will no longer show items if their timer runs out unless you own them.",
+            "Added some tracking of button clicks and basic interactions in the tutorial when playing for the first time to improve the game for new players in the future."
+        ]
+    },
+    {
+        "version": "0.42.8",
+        "changes": [
+            "Santa reached out to me, expressing a rather urgent concern that Christmas might be at risk of cancellation should I not revert the textures to their original state. It seems that their calendar is uniquely tailored to count only the days leading up to Christmas, leaving them oblivious to the concept of April Fools' Day. Considering the gravity of the situation, I concluded that heeding Santa's advice would be the wisest course of action."
+        ]
+    },
+    {
+        "version": "0.42.7",
+        "changes": [
+            "Fixed a crash that could happen when reporting a level.",
+            "Changed the color block texture to be more neutral."
+        ]
+    },
+    {
+        "version": "0.42.6",
+        "changes": [
+            "After a lot of careful consideration I decided that it's best to switch back to the old textures."
+        ]
+    },
+    {
+        "version": "0.42.5",
+        "changes": [
+            "When reporting a level, you will now be asked to take a picture of the offending part of the level."
+        ]
+    },
+    {
+        "version": "0.42.4",
+        "changes": [
+            "More crash fixes.",
+            "The game now shows the server error if publishing a level fails, indicating the reason.",
+            "Removed \"Low Effort\" level report option.",
+            "When trying to publish a level the server now checks the level for profanity and complexity (minimum is 10!).",
+            "Please let me know if you run into cases that the server prevents even though they should be fine!"
+        ]
+    },
+    {
+        "version": "0.42.3",
+        "changes": [
+            "New time limited easter checkpoint.",
+            "5 eggs have been hidden in the lobby, each one is worth 10 coins!",
+            "Fixed a crash that prevented some players from playing."
+        ]
+    },
+    {
+        "version": "0.42.2",
+        "changes": [
+            "Added GRAB Coins!",
+            "Updated the store layout, giving a bit more visibility to cosmetic packs.",
+            "You can now claim 50 GRAB Coins for free every week!",
+            "Added occlusion culling for all levels (but not in the editor yet) to improve performance in some cases."
+        ]
+    },
+    {
+        "version": "0.42.1",
+        "changes": [
+            "Animation tools are now available for everyone! (You may encounter weird or missing collisions if things move fast, expect glitches to be fixed in the future and please don't rely on them for your levels!)"
+        ]
+    },
+    {
+        "version": "0.42.0",
+        "changes": [
+            "New Lobby.",
+            "New wild west cosmetics pack.",
+            "Made getting crushed by animated blocks more reliable.",
+            "Changed networked data layout to better handle changes to animations."
+        ]
+    },
+    {
+        "version": "0.41.4",
+        "changes": [
+            "Improved collision behavior between fast moving player and static objects.",
+            "The calculation of how far down you have to fall to respawn now accounts for animations.",
+            "Fixed in-game music not playing.",
+            "Fixed creating a checkpoint with the thumbstick not updating the number of checkpoints in the pause menu if it was opened.",
+            "Fixed a crash that could happen when adding your favorite levels to the playlist.",
+            "Fixed a crash that could happen if due to connection errors cosmetics data failed loading.",
+            "Disabled snow particles in the main menu."
+        ]
+    },
+    {
+        "version": "0.41.3",
+        "changes": [
+            "Fixed jumping on overlapping blocks and a bunch of other cases that were a bit broken before.",
+            "Fixed holding on with both hands while on a rotating block allowing players to move away from the block while still holding on to it.",
+            "Fixed a crash that could happen when publishing a level."
+        ]
+    },
+    {
+        "version": "0.41.2",
+        "changes": [
+            "Fixed several common crashes."
+        ]
+    },
+    {
+        "version": "0.41.1",
+        "changes": [
+            "Integrated Modulate's ToxMod system to automatically monitor public lobbies for potential voice chat toxicity, ensuring a more respectful environment."
+        ]
+    },
+    {
+        "version": "0.41.0",
+        "changes": [
+            "New lobby!",
+            "New cosmetics!",
+            "Player positions are now networked relative to whatever they are moving with, reducing the perceived lag on moving objects a lot.",
+            "Fixed falling when walking over small gaps.",
+            "Fixed problems when falling off animated ice.",
+            "Reduced problems when walking on rotating blocks.",
+            "Fixed falling to the ground on animated objects moving down too fast.",
+            "Improved falling off rotating objects when holding on with two hands.",
+            "Fixed holding on with both hands while standing on an animated slope not correctly moving the player with it.",
+            "Maybe fixed a common crash that could happen when setting a level image."
+        ]
+    },
+    {
+        "version": "0.40.6",
+        "changes": [
+            "We have a new EULA and Privacy Policy! The game will prompt you to agree to the new EULA on the first start. Please carefully read and understand these documents!",
+            "I also put together community guidelines which you can find below the player list when in-game! They are by no means complete, but provide a general idea on how to behave in GRAB.",
+            "Moved the \"Lock All\" and global undo and redo buttons to the left side.",
+            "Added a \"Mute All\" button on the top right of the player list."
+        ]
+    },
+    {
+        "version": "0.40.5",
+        "changes": [
+            "If gravity blocks overlap, only the smallest one will now affect the player.",
+            "Fixed all server requests failing after playing for a while.",
+            "Fixed automatic no leg mode detection replacing blocks from the previous level with gravity blocks in the new level."
+        ]
+    },
+    {
+        "version": "0.40.4",
+        "changes": [
+            "Improved automatic no leg mode detection (it should be much less aggressive now).",
+            "Fixed moving yourself into a no legs mode area while holding on with both hands losing all your momentum.",
+            "Fixed pushing off with one hand while grappling with the other not giving any momentum from the push.",
+            "Fixed checkpoints not working in no legs mode.",
+            "Fixed checkpoint count on the watch when verifying levels."
+        ]
+    },
+    {
+        "version": "0.40.3",
+        "changes": [
+            "Fixed a bug that could cause gravity zones and invisible blocks to stay around after leaving the editor.",
+            "Fixed jumping off rotating animated blocks.",
+            "Improved automatic no leg mode detection."
+        ]
+    },
+    {
+        "version": "0.40.2",
+        "changes": [
+            "PLEASE UPDATE YOUR LEVELS THAT RELY ON THE PLAYER BEING INSIDE OF BLOCKS! These glitches will stop working soon. Use the new gravity block with \"no legs\" mode.",
+            "Levels using the old fling glitch with the same block around the start and finish are now automatically getting updated to use a gravity zone instead.",
+            "Changed sliding physics for \"no legs\" mode to better match the behavior of the old glitch.",
+            "Fixed bug with jumping in no legs mode accumulating endless speed.",
+            "Fixed group and lock buttons sometimes not working.",
+            "Fixed object getting created while changing the snapping sliders.",
+            "Fixed objects moving when cloning (again).",
+            "Fixed a crash that could happen if preview image data is corrupted.",
+            "Fixed grapple getting attached to the wrong surface if inside another block and one of them is animated.",
+            "Locked players can no longer undo and redo in the editor.",
+            "Fixed objects in the editor losing their collision when kicking or locking someone while they are moving something around."
+        ]
+    },
+    {
+        "version": "0.40.1",
+        "changes": [
+            "Added lobby type filtering for the join menu.",
+            "Added lobby search by name.",
+            "Fixed a blackscreen that could happen while playing (mostly caused by collisions with thin, long objects)."
+        ]
+    },
+    {
+        "version": "0.40.0",
+        "changes": [
+            "New lobby!",
+            "Objects can no longer be selected if your head is inside of them, making it possible to build inside of big gravity zones.",
+            "Fixed black screen when switching levels too quickly.",
+            "Fixed black screen when switching the level in the editor while changing between edit and play mode.",
+            "API requests can now time out if they take too long, which should fix some common problems."
+        ]
+    },
+    {
+        "version": "0.39.1",
+        "changes": [
+            "Added direction sliders for gravity zones.",
+            "Gravity zone particles will now preview the current direction while moving the sliders.",
+            "Fixed a crash that could happen on level switching when using the fireworks checkpoint."
+        ]
+    },
+    {
+        "version": "0.39.0",
+        "changes": [
+            "Added 2024 cosmetics pack with working fireworks checkpoint!",
+            "Added gravity zones with a no leg mode. These new cube shaped areas allow you to change the strength of gravity inside them, push players into a direction and disable the players legs. If you have levels with a huge block around them to make players not have legs, please consider updating them with this new block instead, as the old way will stop working soon! Big gravity zones are currently hard to see, I plan to improve that in the future.",
+            "Fixed objects moving a little when cloning them.",
+            "Flinging off other players should now give more reliable speeds.",
+            "Fixed flying glitches involving multiple players holding on to each other.",
+            "Maybe fixed an issue that would allow to beat and verify levels with a very short amount of time, without actually beating them.",
+            "Fixed an issue with hands flickering on Quest 3.",
+            "Fixed a bunch of common crashes."
+        ]
+    },
+    {
+        "version": "0.38.0",
+        "changes": [
+            "New lobby!",
+            "New christmas themed cosmetics, including a free one!",
+            "Fixed level preview camera positioning for left handed mode.",
+            "Fixed level preview camera behaving weirdly in some directions.",
+            "Fixed level search layout being broken.",
+            "Fixed bad layout when adding favorite levels to the playlist and an image was added to the level.",
+            "Fixed visor being transparent on preview images.",
+            "Added a hard limit to the speed you can get from your hands if the arms are unrealistically long.",
+            "When losing tracking, controller velocity will now be reset to 0 instead of keeping it as it was."
+        ]
+    },
+    {
+        "version": "0.37.0",
+        "changes": [
+            "Full support for level preview images! When setting a level image, it will be updated immediate if the level has already been published before, otherwise it will happen as part of publishing your level.",
+            "The windows version now uses the same Vulkan rendering as the Quest version, resulting in much better performance.",
+            "Networking now always uses a relay server, hopefully fixing connection issues that prevent some people from playing with others.",
+            "Levels now require a start and an end before they can be verified.",
+            "Fixed a glitch that allowed players to glitch through a wall with checkpoints.",
+            "Fixed a very common ghost block bug caused by grappling.",
+            "When holding on to something with two hands and the hand that grabbed first is too far away from the original grab position, it will now automatically let go. When the first hand was grappling instead, the grapple will break."
+        ]
+    },
+    {
+        "version": "0.36.0",
+        "changes": [
+            "New lobby!",
+            "New item pack with a new type!",
+            "Separated player position updates from other networking data to reduce lag.",
+            "Made the grappling rope no longer pull when blocked, reducing the amount of speed being build up for when you let go on one side.",
+            "Fixed level folder permissions on Quest 3, when trying to access level files using tools like SideQuest.",
+            "Fixed the game crashing if a local level file can not be opened. (usually due to wrong file permissions, if the file was copied with adb)",
+            "Changing cosmetics now makes any player holding on to you let go."
+        ]
+    },
+    {
+        "version": "0.35.2",
+        "changes": [
+            "Fixed a common crash that could randomly happen while walking around.",
+            "The editor will now show the backup version of levels in the level list if the latest save file is missing for some reason.",
+            "Made respawning while inside lava a little less bad by not randomizing the start position in that case.",
+            "The game now detects if you are inside a lava block and makes you respawn much more reliably.",
+            "Fixed hand animation getting stuck in an edge case.",
+            "Fixed the bug that allowed opening the lobby inside the editor."
+        ]
+    },
+    {
+        "version": "0.35.1",
+        "changes": [
+            "Performance improvements for animated levels. There might still be some stuttering, but the worst of it is hopefully fixed."
+        ]
+    },
+    {
+        "version": "0.35.0",
+        "changes": [
+            "Early preview support for animation playback. (You CANNOT make your own yet!)",
+            "Halloween lobby!",
+            "Halloween cosmetics pack!",
+            "Added sound when placing a checkpoint.",
+            "Added sound when someone joins the server.",
+            "Made the player respawn if too far away (1000km) from the world origin."
+        ]
+    },
+    {
+        "version": "0.34.1",
+        "changes": [
+            "New cosmetics pack! (Not available on Pico yet, but hopefully soon)",
+            "Music is now loaded on a background thread for faster startup, hopefully fixing the \"GRAB is not responding\" error message that some have reported.",
+            "Updated the EOS SDK, hopefully fixing a common crash.",
+            "Added linebreaks for long item pack titles.",
+            "Improved how scaling item previews works when scrolling.",
+            "Made some preparations for the new tutorial, made by BlackCat508, to go live soon."
+        ]
+    },
+    {
+        "version": "0.34.0",
+        "changes": [
+            "New lobby!",
+            "New cosmetics pack! (Not available on Pico yet, but hopefully soon)",
+            "Fixed a bug that could cause the trigger to not work at all after using the character customisation.",
+            "Disabled turning player while pointing at the character preview to allow turning it with the thumbstick.",
+            "Made smooth turning three times faster. This effects existing values, so you may want to adjust your turn speed if you use it.",
+            "Tweaked controller calibration a bit to better prevent unintentional calibration.",
+            "Made the grapple not let go whenever pointing at a menu. Only if you let go of the trigger."
+        ]
+    },
+    {
+        "version": "0.33.3",
+        "changes": [
+            "You can now edit your character from the in-game menu at any time!",
+            "Added the settings to the in-game menu.",
+            "Added confirmation steps when going back to the lobby or going back to the main menu.",
+            "Added a settings option to calibrate triggers. This helps to work around a controller issue that can cause the grapples sometimes not being pulled in correctly.",
+            "Audio settings are now in their own sub settings menu.",
+            "Audio settings now have volume sliders for the music.",
+            "Made the UI a bit more consistent.",
+            "Made the report menu and buttons rounded."
+        ]
+    },
+    {
+        "version": "0.33.2",
+        "changes": [
+            "Fixed a common crash that started happening when joining a lobby."
+        ]
+    },
+    {
+        "version": "0.33.1",
+        "changes": [
+            "Favorited levels now update to the latest version when you add them to the playlist.",
+            "If you add a favorited level to the playlist that has been deleted, it will now show as deleted and will not be added.",
+            "Default player count per lobby is now 8.",
+            "New maximum player count per lobby is now 12.",
+            "Number of plays and level difficulty are no longer displayed in the favorites list (they were all undefined anyway).",
+            "Fixed missing sliding sound.",
+            "Fixed menu music not looping.",
+            "Added a toggle in settings to disable the in-game music.",
+            "Improved button alignment in settings and moved the doppler effect setting to the bottom.",
+            "Saving a level in the editor now also keeps a backup of the previous save and loading will fallback to it if the file got corrupted for some reason.",
+            "Fixed the times on the player list not having the correct number of leading zeros for the milliseconds."
+        ]
+    },
+    {
+        "version": "0.33.0",
+        "changes": [
+            "Added in-game music with 6 new original tracks by Kyle Misko. They play more or less randomly.",
+            "The voice chat now uses the Epic Online Services Voice module. This should result in less lag in VC and also less lag in general.",
+            "The watch now shows your remaining number of checkpoints and your best time on the current level.",
+            "Fixed Restart button not having rounded corners.",
+            "Fixed holding on to another players hands not making you let go when it should."
+        ]
+    },
+    {
+        "version": "0.32.1",
+        "changes": [
+            "Changed the hand positions a little and increased the collider size for hands to make it easier to grab small things.",
+            "Fixed the transparency of the selector in the editor.",
+            "Recentering the view with an in-game menu open will now put that menu back in front of you.",
+            "Fixed signs looking weird when taking screenshots on Quest.",
+            "Fixed the tutorials not showing on the first launch on Pico and Steam.",
+            "Fixed a couple Pico related issues."
+        ]
+    },
+    {
+        "version": "0.32.0",
+        "changes": [
+            "New summer cosmetics pack with a new head!",
+            "Summer Lobby!",
+            "Player hands! (The old ones are now part of the Early Access Pack! I had to adjust their collider size though to keep things fair)",
+            "Tweaked texture colors and implemented less repetitive tiling for lava and ice textures.",
+            "Added specularity to the level block shading.",
+            "Fixed host player spawn position in the lobby getting randomized when it shouldn't be.",
+            "Rendering optimizations, improving performance in some cases."
+        ]
+    },
+    {
+        "version": "0.31.2",
+        "changes": [
+            "Fixed a crash that could happen when opening the in-game menu while playing the tutorials.",
+            "Fixed a crash that could happen when starting the game for the first time.",
+            "Fixed a somewhat rare crash that could happen when opening the leaderboard.",
+            "UI to save levels now has some rounded corners too!",
+            "Fixed neon blocks being black on screenshots."
+        ]
+    },
+    {
+        "version": "0.31.1",
+        "changes": [
+            "Players that have disconnected now stay on the player list for 30 seconds. This allows to report them even after they left.",
+            "Added in-game option to disable automatic level switching once everyone finished.",
+            "For the first 5 seconds after respawning, you can not hold on to other players anymore. This prevents accidentially grabbing others when trying to get out of a crowded area.",
+            "Fixed the level timer to be independent of bad internet connections.",
+            "Respawning after beating a level will now count as a restart if you didn't checkpoint.",
+            "More UI buttons now have rounded corners.",
+            "bHaptics support on Quest is back! If you own any of their hardware, check the system permissions for GRAB in your Quest settings and enable \"Nearby Devices\".",
+            "Added bHaptics support on PC!"
+        ]
+    },
+    {
+        "version": "0.31.0",
+        "changes": [
+            "New lobby!",
+            "New Devil vs Angel cosmetics pack!",
+            "Fixed a bug that allowed to verify levels without actually playing them by abusing connection issues.",
+            "Better pointer alignment on Pico devices.",
+            "I am still working on the feature that shall not be named... I made some good progress recently, but it's still far from ready unfortunately. Until then other updates will probably keep being slow :("
+        ]
+    },
+    {
+        "version": "0.30.3",
+        "changes": [
+            "Made GRAB work on Quest 1 again and hopefully also fixed some issues with older Quest OS versions.",
+            "Enabled dynamic foveated rendering instead of using a hardcoded setting to reduce stuttering in some worst case situations."
+        ]
+    },
+    {
+        "version": "0.30.2",
+        "changes": [
+            "New cosmetics pack!",
+            "Made the speaker symbol on the player list more in sync with what you hear to more easily determine who to report, mute or kick.",
+            "Editor music is now preloaded on startup to prevent stuttering when opening the editor.",
+            "Made menu and editor music toggles work independently.",
+            "Hopefully fixed some crashes."
+        ]
+    },
+    {
+        "version": "0.30.1",
+        "changes": [
+            "Disabled ownership check on startup, this should fix a problem with the game closing again right after seeing the menu that some players have reported.",
+            "Hopefully also fixed a couple other rare crashes caused by Quest OS updates."
+        ]
+    },
+    {
+        "version": "0.30.0",
+        "changes": [
+            "New lobby!",
+            "Added support for arbitrary colors for color blocks through hex color codes.",
+            "Added limits for arm length and player height.",
+            "Changed the curve for hand velocity, making glitch jumping less effective and generally making extremely high jumps harder.",
+            "Temporarily disabled bhaptics support. The latest quest update requires me to make some bigger changes to make it work again.",
+            "Some minor crash fixes."
+        ]
+    },
+    {
+        "version": "0.29.0",
+        "changes": [
+            "Leaderboards! Every level now has a leaderboard. These will not have any old data.",
+            "Player preview in the main menu can now be rotated either with the thumbstick (disable by enabling stick drift mode in the settings!) or by grabbing it with the pointer.",
+            "Official levels and tutorials are now hosted online like all other levels. This allows me to update them at any time and enables leaderboards and statistics for them."
+        ]
+    },
+    {
+        "version": "0.28.4",
+        "changes": [
+            "It looks like an animal tried eating a cable leading to the gravity generator! Fortunately it could be fixed with duct tape."
+        ]
+    },
+    {
+        "version": "0.28.3",
+        "changes": [
+            "OH NO! The gravity generator in the GRAB Training Facility broke!"
+        ]
+    },
+    {
+        "version": "0.28.2",
+        "changes": [
+            "The wrist watch now shows the real time and has a button to open the ingame menu.",
+            "Added a setting to change on which side the wrist watch is placed.",
+            "Added a setting to turn off the menu music."
+        ]
+    },
+    {
+        "version": "0.28.1",
+        "changes": [
+            "Added the Easter Pack for only $4.99!",
+            "Significantly reduced stuttering when opening level lists, by doing most of the work in the background until it's ready.",
+            "Started preparing the Steam release, not out yet, but you can wishlist it already!",
+            "Improved performance of the windows version significantly.",
+            "The Steam version now asks players to take off the headset to finish purchases when using the Oculus OpenXR runtime (which does not support the steam overlay).",
+            "Fixed preview window image on PC being stretched.",
+            "Improved grabbing with index controllers."
+        ]
+    },
+    {
+        "version": "0.28.0",
+        "changes": [
+            "New lobby!",
+            "Added wrist watch showing current level time and player speed.",
+            "Added support for rounded UI and used it on some first UI elements.",
+            "New keyboard colors to better match other UI.",
+            "\"Best of GRAB\" now supports linking to the level list of a user.",
+            "\"Best of GRAB\" now supports scrolling.",
+            "Updated SlinDev logo displayed at launch.",
+            "Performance improvements, mostly related to the UI."
+        ]
+    },
+    {
+        "version": "0.27.3",
+        "changes": [
+            "Added the Space Pack! Including a new head design.",
+            "Added music for the main menu.",
+            "Added a new credits screen to the main menu."
+        ]
+    },
+    {
+        "version": "0.27.2",
+        "changes": [
+            "Performance optimizations.",
+            "Another attempt at fixing flight glitches...",
+            "Fixed a bunch of smaller bugs related to collecting level statistics."
+        ]
+    },
+    {
+        "version": "0.27.1",
+        "changes": [
+            "Signs and level descriptions now have a cursor and allow fixing parts of the text without deleting and writing everything again.",
+            "Keyboard now supports full caps lock by pressing the caps button twice.",
+            "Fixed several common crashes.",
+            "Hopefully fixed autosave saving the levels of other players.",
+            "Improved load times for big levels.",
+            "Hopefully fixed some login problems that could be caused by connection issues during startup.",
+            "Fixed pushing off other players holding on to you."
+        ]
+    },
+    {
+        "version": "0.27.0",
+        "changes": [
+            "New lobby!",
+            "Added a Valentines Pack!",
+            "Fixed a ghost block issue after using the editor.",
+            "Added some prevention for the most common fly hack.",
+            "Added a timeout for grabbing again after being pushed off by another player. This hopefully prevents a fly glitch and makes it riskier to hold on to other players without their consent.",
+            "Players are now automatically letting go when grabbing in a circle, which allowed them to fly before.",
+            "Fixed rendering of the folding fan grapple."
+        ]
+    },
+    {
+        "version": "0.26.1",
+        "changes": [
+            "Grouping objects no longer costs additional complexity.",
+            "Changing block settings is now done on the wrist menu and also allows editing multiple objects at the same time.",
+            "In the editor the complexity of the current selection is now displayed next to the total complexity used for the level.",
+            "Fixed an issue that could cause levels to be broken in the editor and made it recover for those new cases that came up.",
+            "Fixed some bugs around calculating the lowest height that players can go in a map.",
+            "Limited the minimum and maximum size of objects on the editor, to prevent the collision from breaking.",
+            "Fixed other players cosmetics not loading correctly if not logged in.",
+            "Fixed \"No levels found\" message not going away on the level lists after a search with no results.",
+            "Removed \u201cimposter\u201d player report option.",
+            "Prepared new cosmetics."
+        ]
+    },
+    {
+        "version": "0.26.0",
+        "changes": [
+            "New winter lobby!",
+            "Increased allowed maximum level complexity to 1500 (it was 1000)."
+        ]
+    },
+    {
+        "version": "0.25.0",
+        "changes": [
+            "New christmas lobby!",
+            "Prepared a new item pack, to go live shortly after this update."
+        ]
+    },
+    {
+        "version": "0.24.3",
+        "changes": [
+            "The level browser sections are now dynamically loaded from the backend and can be changed at any time.",
+            "The keyboard now allows for linebreaks on signs.",
+            "The oculus report button will now open a simplified in-game report menu.",
+            "Enabled local dimming on Quest Pro for better contrasts."
+        ]
+    },
+    {
+        "version": "0.24.2",
+        "changes": [
+            "Prepared GRAB for release on the PICO store."
+        ]
+    },
+    {
+        "version": "0.24.1",
+        "changes": [
+            "Fixed Frooble grapple rope design.",
+            "Fixed some problems with server and level list scrolling past the end of the list and some other weirdness.",
+            "Found a workaround for what appears to be a driver bug on Quest, improving performance and reducing crashes in complex levels with neon blocks.",
+            "Pico 4 support (SideQuest version)."
+        ]
+    },
+    {
+        "version": "0.24.0",
+        "changes": [
+            "New lobby!",
+            "Some general performance improvements.",
+            "Fixed some ghost block issues, recovering better when reloading a level in the editor.",
+            "Fixed some common crashes."
+        ]
+    },
+    {
+        "version": "0.23.1",
+        "changes": [
+            "Fixed purchases not being added to your account if purchased outside the in-game popup or by redeeming a key. If you bought something before, but didn't get it, please try clicking the buy button on the pack and it should be unlocked without asking for payment."
+        ]
+    },
+    {
+        "version": "0.23.0",
+        "changes": [
+            "New lobby!",
+            "Color blocks now have a neon toggle that makes them not be effected by light.",
+            "Prepared halloween cosmetics pack.",
+            "Fixed a rare crash that could happen when trying to favorite a level.",
+            "Fixed host position being randomized inside the lobby (it was not supposed to be)."
+        ]
+    },
+    {
+        "version": "0.22.5",
+        "changes": [
+            "Players now start at a random position inside the start circle.",
+            "The start circle can now be rotated, defining the initial direction the player is looking at when loading into a level.",
+            "The list of levels in the editor is now sorted based on the last modified date.",
+            "Fixed other players showing up before loading the level when joining a lobby.",
+            "Fixed a crash that could happen when confirming to restart a level.",
+            "Fixed a bug that allowed using infinite complexity for levels.",
+            "Prepared the shop layout for some future changes.",
+            "Prevent creation of breaking level blocks with wrong materials. (This could be abused when manipulating the level files directly)"
+        ]
+    },
+    {
+        "version": "0.22.4",
+        "changes": [
+            "Fixed level publishing with some of the new characters not working correctly.",
+            "Made some changes to the login, removing all fallbacks to using sidequest login in the Applab version: This can cause some few users to get a new account if they relied on a Sidequest account before. I will eventually add a way to merge accounts to fix this, but for now just don't panic if you don't see your published levels anymore. They are still there, just on a different account of yours.",
+            "Fixed checkpoints getting placed inside the floor.",
+            "Maybe made other players lag a bit less?"
+        ]
+    },
+    {
+        "version": "0.22.3",
+        "changes": [
+            "The level listings now show an estimated difficulty and number of plays (updated every 25 and then every 100 plays).",
+            "The selection color of selected objects is now slightly red if locked and slightly green if grouped.",
+            "Added a confirmation screen when restarting a level to hopefully prevent unintended restarts.",
+            "Removed the need to stop moving when placing a checkpoint, but can't place checkpoints on slippery surfaces.",
+            "If the spawn is below a surface that is lower than the player, the player is now spawned below, instead of above or inside.",
+            "Added a new report reason for when users build inappropriate things in the editor.",
+            "Changed the report reason title for impossible levels due to glitches that stopped working.",
+            "Fixed objects disappearing when going super small in the editor.",
+            "Fixed a bug in the editor that caused some collision hulls not to update correctly.",
+            "Fixed undo of the deletion of blocks causing weird rotation and stretching.",
+            "Fixed textures getting streched in some levels.",
+            "Fixed a somewhat common crash in the main menu.",
+            "Fixed quick regrabbing allowing players to get teleported by another respawning player."
+        ]
+    },
+    {
+        "version": "0.22.2",
+        "changes": [
+            "Prevent checkpoints on bounce blocks.",
+            "Prevent checkpoints on breaking blocks.",
+            "Made the bounce block bounce more reliable in some edge cases.",
+            "Updated networking library for much better performance with lots of players.",
+            "Added additional glyphs to the keyboard.",
+            "Pressing B and Y buttons at the same time will make you respawn.",
+            "Pressing both thumb sticks at the same time will place a checkpoint.",
+            "Added push to mute and push to talk toggle to the settings.",
+            "X button now allows push to talk or push to mute.",
+            "Grabbing an object while holding the clone button no longer snaps the original object into the current snapping grid.",
+            "Fixed several common crashes."
+        ]
+    },
+    {
+        "version": "0.22.1",
+        "changes": [
+            "Crash fixes. (It can still crash, but hopefully less often)",
+            "Fixed ghost block problems when switching levels.",
+            "Fixed an issue with objects in the editor not getting deleted correctly.",
+            "Reduced amount of logging, maybe improving performance a bit.",
+            "Fixed the breaking block shake amount to be dependent on the size of the block."
+        ]
+    },
+    {
+        "version": "0.22.0",
+        "changes": [
+            "Added a bounce block!",
+            "New lobby to match the new cosmetic packs.",
+            "Fixed breaking blocks not being synchronized between players.",
+            "Holding on to a player that is respawning will now push you off.",
+            "Made grapples work more reliable if a grapple block is inside a non grapple block.",
+            "The grapple pointer will now correctly indicate grapple blocks behind the surface."
+        ]
+    },
+    {
+        "version": "0.21.0",
+        "changes": [
+            "Multiple objects in the editor can now be grouped into one! (But it costs 1 complexity on top of the parts for now.)",
+            "Major changes to the networking and how objects are identified in the editor (please let me know about any new issues you encounter on discord!)",
+            "Fixed creating start and finish in the editor often not working correctly.",
+            "Fixed the timer not resetting correctly when restarting a level.",
+            "Fixed the fly glitch when rotation yourself while using smooth turn to rotate in the opposite direction.",
+            "Limited the extra speed when letting go of other people.",
+            "List of favorite levels is now ordered in reverse, showing the most recent additions at the top.",
+            "Increased the number of objects that can be selected at the same time from 200 to 500.",
+            "Community levels are no longer cached on the device and instead get downloaded every time they are opened. This prevents the installation size from growing over time.",
+            "Fixed the collision hull of breaking blocks shaking, as this could cause players to be pushed into other blocks and also simplifies the code.",
+            "Prepared two new cosmetic packs.",
+            "Changed how objects in the shop are positioned and scaled to simplify the process of adding new items."
+        ]
+    },
+    {
+        "version": "0.20.2",
+        "changes": [
+            "Minor code changes for the level listings in preparation for some server changes.",
+            "Fixed editor music starting out loud for a moment.",
+            "Removed an unnecessary server call on startup."
+        ]
+    },
+    {
+        "version": "0.20.1",
+        "changes": [
+            "INFO: I have been working on a grouping feature for the editor for quite some time now and it still needs some more work until it is ready for release, so in the meantime I decided to release this small update.",
+            "Background music for the editor! It is one long track made for GRAB that keeps looping.",
+            "Added a setting to enable / disable the music.",
+            "Increased default editor object rotation snapping angle to 15\u00b0 to hopefully motivate more players to align things a bit better.",
+            "Grappling hooks are now displayed on the players wrist. This makes it easier to show them off to others.",
+            "Added support for eyewear items to customize the player with.",
+            "Added a new item as a thank you for writing a review on the Quest store. (It has to be a written review and might take a couple of days to be unlocked!)"
+        ]
+    },
+    {
+        "version": "0.20.0",
+        "changes": [
+            "New summer lobby!",
+            "Increased the amount of history data per player, which should reduce some of the weirdness when undoing changes to a big selection of objects.",
+            "Limited the number of objects that can be selected at the same time to 200 to prevent some issues."
+        ]
+    },
+    {
+        "version": "0.19.3",
+        "changes": [
+            "The selector tool in the editor can now be scaled when selecting multiple objects.",
+            "Objects in the level editor can now be locked to prevent moving them by accident.",
+            "Selected objects are now highlighted.",
+            "The pause menu and keyboard now show a darkened version through walls.",
+            "The object manipulators in the editor now shine through objects that are covering them.",
+            "Changed the grid sizes for position snapping to maybe make aligning things a bit easier.",
+            "Hide unused object manipulators when interacting with an object.",
+            "The selector in the editor now shines through objects.",
+            "Fixed the host crashing if another player deletes a block that (due to some other bugs) does not exist for the host anymore.",
+            "Fixed a common crash that could happen when pressing respawn inside the editor while switching between editing and testing.",
+            "Fixed a somewhat rare crash in the main menu that could just randomly happen.",
+            "UPDATE: Minor fix release fixes a crash when cloning lots of objects and weirdness around position snapping."
+        ]
+    },
+    {
+        "version": "0.19.2",
+        "changes": [
+            "Major performance improvements for levels with high level complexity.",
+            "Fixed a common issue that could cause blocks that don't go away. (It might still happen, but hopefully much less and for other reasons)",
+            "Added more waiting on level changes if otherwise everyone would get kicked.",
+            "Fixed creator of the previously played level still being highlighted as creator when going back to the lobby.",
+            "Fixed old checkpoints for other players not showing after joining.",
+            "Debug logs on Windows are now written to a file. This should improve performance a lot.",
+            "Fixed closing the window on Windows not closing the game."
+        ]
+    },
+    {
+        "version": "0.19.1",
+        "changes": [
+            "Reduced the friction when walking fast allowing to move bigger distances with less effort.",
+            "Fixed the \"car glitch\".",
+            "Player changes don't need to be manually \"saved\" anymore.",
+            "Player list is now sorted in the order players joined.",
+            "Players now get kicked on the level change if their headsets don't respond after 5 seconds. This should fix the game taking forever to change levels. <- This caused a crash, which is now fixed.",
+            "Fixed a crash that could happen when duplicating objects in the editor.",
+            "Maybe fixed disabling the voice chat."
+        ]
+    },
+    {
+        "version": "0.19.0",
+        "changes": [
+            "Tilt and press the left thumbstick to undo or redo your last changes in the level editor.",
+            "The hosts player list in the editor now has a lock all and undo / redo buttons to lock everyone from editing to then undo all changes to the level by any player.",
+            "Added native support for bHaptics devices.",
+            "New lobby!",
+            "Added a setting to completely disable the voice chat.",
+            "Level start and finish now have a minimum and maximum size.",
+            "Hopefully fixed some bugs around recreating start and finish.",
+            "Fixed ability to move the head below the feet by messing with the guardian setup to cause all kind of glitches.",
+            "Now only the host can see and edit the sky and fog settings in the editor.",
+            "Made players not grab onto other players if they were already walking or jumping.",
+            "Added markers for the grappling hook to indicate where it is going even if not pointed at a grappleable surface.",
+            "Fixed player losing all moment if grabbing air with one hand while throwing off something with the other.",
+            "Fixed not being able to create new parts after getting unlocked with the wrist display open.",
+            "Fixed the most common editor crash (but probably introduced new ones with the other changes)."
+        ]
+    },
+    {
+        "version": "0.18.2",
+        "changes": [
+            "Added easter cosmetics.",
+            "Fixed some of the most common crashes around Vulkan memory management."
+        ]
+    },
+    {
+        "version": "0.18.1",
+        "changes": [
+            "Fixed editor ambience reset button not sending the changes to other players.",
+            "Fixed flickering if two players look at the editor ambience tab at the same time.",
+            "You can now always recreate the start and finish objects, picking them from the object list will just remove the existing one.",
+            "Fixed parts list not scrolling to the end."
+        ]
+    },
+    {
+        "version": "0.18.0",
+        "changes": [
+            "Increased maximum level complexity to 1000.",
+            "Added a new block material that can be colored but has no special properties.",
+            "Added a sun, the position and size can be adjusted in the editor.",
+            "Added an option to change the sky colors in the editor.",
+            "Added an option to change the fog density in the editor.",
+            "Made the sky not disappear if you move far away from the world origin.",
+            "Fixed Ironman glitch.",
+            "Added a report option for levels requiring the iron man glitch.",
+            "Slightly tweaked two handed grappling physics. (Still planning on making more changes to it)"
+        ]
+    },
+    {
+        "version": "0.17.2",
+        "changes": [
+            "New players will now load into the tutorial levels on first launch.",
+            "Fixed the text sometimes stretching everywhere looking completely broken.",
+            "Fixed a problem with the player interpolation, this should fix players getting stretched weirdly.",
+            "Fixed players freezing and teleporting all the time. Might still happen with bad connections, but should be much better overall.",
+            "Fixed something about the editor that may or may not fix a bunch of issues..."
+        ]
+    },
+    {
+        "version": "0.17.1",
+        "changes": [
+            "Moved the level selector and playlists up a bit in the lobby so the keyboard isn't stuck in the ground anymore.",
+            "Fixed some holes in the lobby.",
+            "Made the host player face the level selection screen in the lobby.",
+            "Fixed some bugs around changing player colors.",
+            "Fixed opening the early access pack crashing the game (if you don't own it yet)."
+        ]
+    },
+    {
+        "version": "0.17.0",
+        "changes": [
+            "Fixed level publishing and all other server requests that require authentication to stop working after 2 hours of playing.",
+            "New lobby!",
+            "Made the shop system much more flexible.",
+            "Optimized and cleaned up the player model.",
+            "Cleaned up customization models."
+        ]
+    },
+    {
+        "version": "0.16.1",
+        "changes": [
+            "Fixed checkpoint skins showing other players colors in the game.",
+            "Fixed the flag and mini me checkpoints showing wrong colors in the preview when changing the colors.",
+            "Added a setting to disable scrolling with the thumbstick in things like the server or level listings. This should help people with broken thumbsticks."
+        ]
+    },
+    {
+        "version": "0.16.0",
+        "changes": [
+            "Cosmetics! There is a first pack of 9 items that you can buy now for 4.99$.",
+            "Fixed an edge case in the editor that could cause one user to delete an object, but another user still seeing it. I don't think it fixes the problem completely, but it should fix one possible case that can make it happen."
+        ]
+    },
+    {
+        "version": "0.15.0",
+        "changes": [
+            "Added support for oculus invites, group presence, destinations and group launches on Quest. PLEASE TELL ME IF YOU ENCOUNTER PROBLEMS WITH THESE FEATURES!",
+            "Removed the ability to change the password from within the lobby as it would break some of the new features.",
+            "Removed the option to change the user name if playing on quest. Instead the oculus user name will now always be used. This helps reduce the amount of moderation needed for user names, prevents users from impersonating others and guarantee that the in game player names match the oculus roaster player names.",
+            "Lobbies with a maximum player count of 1 are no longer showing in the server browser."
+        ]
+    },
+    {
+        "version": "0.14.0",
+        "changes": [
+            "Warnings and bans are now displayed in the main menu: Players get two warnings (in extreme cases players might be banned without warning!) before getting banned and if they keep misbehaving the time of bans will keep increasing. If a player is banned they can only host and join private games and are not able to publish levels. Publishing inappropriate levels as well as misbehaving in the game both leads to warnings and bans!",
+            "Added \"Report Level\" button with reason selection to the level info view.",
+            "Added \"Report User\" button with reason selection to the player list.",
+            "Admins and Moderators can now kick and ban other players from a server, just like the host.",
+            "Improved messages when kicked or banned from a server or entering a wrong password.",
+            "Added a statistics screen with some basic level info to the pause menu."
+        ]
+    },
+    {
+        "version": "0.13.1",
+        "changes": [
+            "Fixed a problem in the editor that could get players stuck in a bad state if the player changed between playing and testing while dying. (Could easily happen if all of a level is above the origin)",
+            "In some rare cases a level can lose all collision in the editor. I didn't fix the issue causing it yet, but saving and reloading should now always make it recover.",
+            "Added a respawn button in the editor. It will either respawn you at your last spawn position if in play mode or move you back to the start (or world origin, if there is no start) if in edit mode."
+        ]
+    },
+    {
+        "version": "0.13.0",
+        "changes": [
+            "Added searching levels by level name (Needs to be an exact match! Case, spaces and punctuation is ignored). Searching by user name is not possible yet, but planned for the future.",
+            "Added a verified levels list that only shows verified levels.",
+            "Added a random button to the level list, adding a random level from that list to the playlist.",
+            "Added a profile button on the player list for users that have published levels, listing those users levels.",
+            "No more asking to like the level if you already finished it and pressed restart and finished it again.",
+            "Added !, ?, - and _ to the keyboard.",
+            "The players visor will now use the secondary color (but darker) and light up much more than before when talking.",
+            "Fixed the \"More Levels\" button in the in-game level browser not working.",
+            "Fixed muting other players not working.",
+            "Removed customization options if the player is not logged in (which is the case on PC and when sideloading).",
+            "Changed the main menu logo to say \"Early Access\".",
+            "Maybe fixed a crash when scrolling the level list.",
+            "Fixed the game logo not showing up in the menu on windows.",
+            "Fixed a crash on windows.",
+            "Fixed a crash that could happen in some rare cases related to the in game menu.",
+            "Fixed pressing ok on the \"Failed to join\" message causing the server below the ok button to be selected (or joined if it was selected before)."
+        ]
+    },
+    {
+        "version": "0.12.2",
+        "changes": [
+            "Another attempt to fix crashes in the editor.",
+            "Increased maximum number of favorite levels back to 100."
+        ]
+    },
+    {
+        "version": "0.12.1",
+        "changes": [
+            "Fixed a crash with fetching a joining users info, but then they leave (or crash) before the data is fetched.",
+            "Fixed a race condition with the part picker UI that was likely the cause for a lot of crashes.",
+            "Fixed the backend returning success status for a bunch of calls but then returning an error that the game wasn't prepared to handle."
+        ]
+    },
+    {
+        "version": "0.12.0",
+        "changes": [
+            "Players can now chose their colors.",
+            "New Lobby.",
+            "Players visor lights up when talking.",
+            "The speaker icon lights up on the player list for the person that is speaking.",
+            "Added some colors to the rows in the player list to indicate players roles (moderators - green, creator of the current level - yellow).",
+            "Added a warning about publishing inappropriate levels.",
+            "Fixed a crash when going back to the main menu from the editor (also on disconnect from server while in the editor).",
+            "Fixed a crash when finishing a level while the pause menu was open.",
+            "Made the game recover better from corrupted level parts.",
+            "Decreased number of favorite levels a user can add to 50 (it wasn't working well before with more than that, working on a fix to increase again)."
+        ]
+    },
+    {
+        "version": "0.11.1",
+        "changes": [
+            "The player list can now be scrolled (10th player was cut off before, now it will work with any number of players).",
+            "Added collection of per level statistics to maybe use for sorting and displaying levels in the future.",
+            "Added rating a level after finishing it. Not used yet, but meant for sorting levels in the future.",
+            "Swapped + and - button positions in settings and host views.",
+            "Fixed a level getting skipped if everyone finished the level and host presses next level button.",
+            "Respawning without having placed a checkpoint will now also restart the timer (just like pressing restart would)."
+        ]
+    },
+    {
+        "version": "0.11.0",
+        "changes": [
+            "Improved networking performance, reducing the performance impact of many players on the host.",
+            "Hosts can now specify the maximum number of players allowed (1-10). There may be performance issues with more than 5, but hopefully those are gone now.",
+            "Fixed scrolling the part list in the editor not working consistently with both hands (it only worked after pressing trigger before).",
+            "Potentially fixed a crash with the in game menu."
+        ]
+    },
+    {
+        "version": "0.10.2",
+        "changes": [
+            "Increased maximum number of servers on the server list from 100 to 200 (unfortunately the maximum epic online services support).",
+            "Added option to filter the server list by public and private servers.",
+            "Fixed that when the host tries to mute someone the playlist would open at the same time.",
+            "Fixed the PC and sidequest versions of the game crashing on entering the playername at the start.",
+            "Fixed favorite and your level lists showing up on PC and sidequest version even if not logged in (but not actually working correctly)."
+        ]
+    },
+    {
+        "version": "0.10.1",
+        "changes": [
+            "Added login to epic online services using your oculus account first with fallback to using a random ID, this will hopefully work around issues some users had with the random id on quest and not being able to play as a result.",
+            "Fixed the publish button overlapping the create checkpoint button when verifying a level."
+        ]
+    },
+    {
+        "version": "0.10.0",
+        "changes": [
+            "Up to 100 levels can now be added to favorites. (This currently only realy works if installed through App Lab!)",
+            "Favorited levels can be displayed in their own list.",
+            "Your own published levels can now be chosen from it's own level browser section.",
+            "You can now list levels made by the owner of the currently played map and add more of them to the playlist.",
+            "Playlist and level browser are now accessible from the pause menu.",
+            "(Hopefully) Easier tutorial levels.",
+            "Moderators will see buttons to remove offensive, vulgar or otherwise inappropriate levels.",
+            "Made the UI pointer not get blocked by start and finish anymore.",
+            "Fixed a crash that could happen when loading a new community level.",
+            "Hopefully fixed giant UI showing up in the level sometimes and never going away again."
+        ]
+    },
+    {
+        "version": "0.9.1",
+        "changes": [
+            "Fixed feet circle rotating with other players heads.",
+            "Moved lobby spawn location and rotation for host to face the level selector.",
+            "Fixed checkpoints floating in random places and missing usernames in lobby."
+        ]
+    },
+    {
+        "version": "0.9.0",
+        "changes": [
+            "Replaced the lobby with a fun holiday lobby.",
+            "Increased maximum level complexity to 750.",
+            "Added a level info screen to the left of the pause menu.",
+            "Doppler Effect for voice (pitch shift when moving towards or away from each other) can now be disabled in settings.",
+            "Reduced doppler effect when moving fast.",
+            "Fixed a pretty bad memory leak which also caused the keyboard not closing in same situation.",
+            "Player feet are now a grey circle instead of the red ball.",
+            "Made tutorial 4 easier.",
+            "Hopefully fixed levels sometimes getting skipped.",
+            "Added scrolling with thumbstick for server browser and level browser."
+        ]
+    },
+    {
+        "version": "0.8.0",
+        "changes": [
+            "In the editor all players are now locked from editing until unlocked by the host!",
+            "Added a restart button that lets a player reset all their checkpoints and start a level again.",
+            "Added a player list to the in game menu with options to mute, kick (if you are the host) and lock / unlock for editing in the editor.",
+            "The player list also shows who reached the end of a level, their best time and if they are trying again.",
+            "Fixed an issue that caused players to die when jumping to lower parts of a level when joining an editor session.",
+            "Fixed a crash that could happen when joining a server with the level editor open.",
+            "Maybe fixed an issue causing wrong player names to show on some players (or no name at all)."
+        ]
+    },
+    {
+        "version": "0.7.2",
+        "changes": [
+            "Fixed players getting disconnected after 1 hour and not being able to reconnect until they restart the game."
+        ]
+    },
+    {
+        "version": "0.7.1",
+        "changes": [
+            "No more authenticating to Epic Online Services with Oculus Account, but just using a random ID instead. It kept causing issues and doesn't add anything useful at this time.",
+            "Fixed grabbing crumbling blocks not making them disappear.",
+            "Fixed an issue in the level editor that would cause the player to respawn higher than intended."
+        ]
+    },
+    {
+        "version": "0.7.0",
+        "changes": [
+            "Everyone can now hear the sounds of other players.",
+            "Added a setting to disable stick turning completely.",
+            "Moved the respawn button to the top right, to hopefully make it easier to hit the checkpoint button.",
+            "Fixed ice slide sound not stopping if there is no ground anywhere below the player.",
+            "Fixed game not connecting to Epic Online Services on first launch.",
+            "You can now also hold on to other players hands (not just head and body)",
+            "The host can now also push off other players",
+            "Holding on to another player will not allow to float midair anymore"
+        ]
+    }
+]
