@@ -1,5 +1,28 @@
 [
     {
+        "version": "0.57.0",
+        "changes": [
+            "New lobby!",
+            "New item pack.",
+            "Added passthrough support for the editor! (Quest only)",
+            "Added a \"Get Community Badge\" button to the character screen with simple steps on how to join the discord server and claim it.",
+            "Added a forfeit button when playing levels, to indicate to the host that you don't intend to beat the current level.",
+            "If someone is on the dashboard or takes off the headset for 30 seconds they will now be marked as inactive and ignored for automatic level changing.",
+            "Added a sonic boom when breaking the sound barrier.",
+            "Fixed grouping / ungrouping causing the objects to teleport.",
+            "Fixed controller vibrations on the editor wrist menu playing on the wrong controller in some cases.",
+            "Fixed a crash when switching quickly between leaderboard and player list in the in-game menu.",
+            "Fixed wrong checkpoint count when verifying a level for publishing."
+        ]
+    },
+    {
+        "version": "0.56.1",
+        "changes": [
+            "Fixed crashes caused by the party horn.",
+            "Made the party horn a bit less loud."
+        ]
+    },
+    {
         "version": "0.56.0",
         "changes": [
             "New lobby!",
