@@ -8,8 +8,43 @@
 <body>
     <h1>Welcome to Vestriaa</h1>
 
+    <!-- Login and Logout buttons -->
+    <button id="loginButton">Login</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
     <script>
-        // Function to decode Base64 string from URL
+        // Login button redirecting to Oculus authentication page
+        document.getElementById('loginButton').addEventListener('click', function() {
+            const redirectUri = encodeURIComponent('https://localhost:5173/levels');
+            const organizationId = '1298096256894263';
+            const authUrl = `https://auth.oculus.com/sso/?redirect_uri=${redirectUri}&organization_id=${organizationId}`;
+            window.location.href = authUrl;
+        });
+
+        // Logout button to remove the user data from localStorage
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            // Remove user data from localStorage
+            localStorage.removeItem('user');
+            localStorage.removeItem('decodedData');
+
+            // Hide logout button and show login button
+            document.getElementById('logoutButton').style.display = 'none';
+            document.getElementById('loginButton').style.display = 'inline';
+        });
+
+        // Check if user is logged in (based on data in localStorage)
+        function checkLoginStatus() {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                document.getElementById('loginButton').style.display = 'none';  // Hide login
+                document.getElementById('logoutButton').style.display = 'inline';  // Show logout
+            } else {
+                document.getElementById('loginButton').style.display = 'inline';  // Show login
+                document.getElementById('logoutButton').style.display = 'none';  // Hide logout
+            }
+        }
+
+        // Decode Base64 from URL hash and make the API request
         function decodeBase64Url(base64Url) {
             try {
                 const decodedData = JSON.parse(atob(base64Url));
@@ -21,28 +56,23 @@
             }
         }
 
-        // Function to make the API request using the decoded data
         function makeApiRequest(decodedData) {
             if (decodedData) {
                 const { code, org_scoped_id } = decodedData;
-
-                // Construct the API request URL
                 const apiUrl = `https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${org_scoped_id}:${code}`;
                 console.log('API URL:', apiUrl);
 
-                // Make the API request
                 fetch(apiUrl)
                     .then(response => response.json())
                     .then(data => {
                         console.log('API Response:', data);
-                        // Handle the response (e.g., store data in localStorage)
-                        localStorage.setItem('user', JSON.stringify(data));  // Example storing the response
+                        localStorage.setItem('user', JSON.stringify(data));  // Store API response
                     })
                     .catch(error => {
                         console.error('Error making API request:', error);
                     });
 
-                // Store the decoded data in localStorage for future use
+                // Store the decoded data in localStorage
                 localStorage.setItem('decodedData', JSON.stringify(decodedData));
 
                 // Remove the hash from the URL after processing
@@ -50,14 +80,15 @@
             }
         }
 
-        // Extract Base64 encoded string from URL hash
+        // Extract Base64 encoded string from URL hash and make the request
         const base64Data = window.location.hash.substring(1); // Remove the '#' part
         if (base64Data) {
             const decodedData = decodeBase64Url(base64Data);  // Decode the Base64
             makeApiRequest(decodedData);  // Make the API request with the decoded data
-        } else {
-            console.log('No Base64 data in URL hash.');
         }
+
+        // Call checkLoginStatus on page load to show the correct buttons
+        checkLoginStatus();
     </script>
 </body>
 </html>
