@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vestria</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pinia@2.1.2/dist/pinia.global.prod.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Welcome</h1>
+        <div v-if="userStore.isLoggedIn">
+            <p>User is logged in as: {{ userStore.userInfo.name }}</p>
+        </div>
+        <div v-else>
+            <p>User is not logged in.</p>
+        </div>
+    </div>
+
+    <script>
+        const { defineStore } = Pinia;
+        
+        const useUserStore = defineStore('user', {
+            state: () => ({
+                user: null,
+                expires: 0,
+                favoriteLevels: [],
+                listType: null,
+                list: [],
+                listIndex: null,
+                processedList: {}
+            }),
+
+            getters: {
+                accessToken: (state) => {
+                    if (state.expires - Date.now() > 0) return state.user?.access_token ?? undefined;
+                    else return undefined;
+                },
+                isLoggedIn: (state) => {
+                    return state.accessToken !== undefined && state.accessToken.length > 0;
+                },
+                isAdmin: (state) => {
+                    return state.isLoggedIn && state.user.info.is_admin;
+                },
+                isSuperModerator: (state) => {
+                    return state.isLoggedIn && (state.user.info.is_supermoderator || state.user.info.is_admin);
+                },
+                isModerator: (state) => {
+                    return state.isLoggedIn && (state.user.info.is_moderator || state.isSuperModerator);
+                },
+                isVerifier: (state) => {
+                    return state.isLoggedIn && (state.user.info.is_verifier || state.isModerator);
+                },
+                userID: (state) => {
+                    return state.isLoggedIn ? state.user.info?.user_id : undefined;
+                },
+                userInfo: (state) => {
+                    return state.isLoggedIn ? state.user.info : undefined;
+                }
+            }
+        });
+
+        const pinia = Pinia.createPinia();
+        
+        const app = new Vue({
+            el: '#app',
+            pinia,
+            computed: {
+                userStore() {
+                    return useUserStore();
+                }
+            },
+            mounted() {
+                // Decode the Base64 value from the URL hash
+                const base64Data = window.location.hash.substring(1);
+                if (base64Data) {
+                    try {
+                        const decodedData = JSON.parse(atob(base64Data));
+                        console.log('Decoded Data:', decodedData);
+
+                        // Save the decoded data to localStorage
+                        localStorage.setItem('user', JSON.stringify(decodedData));
+
+                        // Update the store with the user data from localStorage
+                        useUserStore().$patch({
+                            user: decodedData.user,
+                            expires: decodedData.expires,
+                            favoriteLevels: decodedData.favoriteLevels || [],
+                            listType: decodedData.listType || null,
+                            list: decodedData.list || [],
+                            listIndex: decodedData.listIndex || null,
+                            processedList: decodedData.processedList || {}
+                        });
+                    } catch (error) {
+                        console.error('Error decoding Base64 data:', error);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
