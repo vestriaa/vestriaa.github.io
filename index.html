@@ -105,6 +105,9 @@
             <p><strong>Owned GRAB Coins:</strong> <span id="ownedCoins">0</span></p>
             <p><strong>Unclaimed Tips:</strong> <span id="unclaimedTips">0</span></p>
             <p><strong>Total Tips:</strong> <span id="totalTips">0</span></p>
+
+            <!-- Claim Tips button, shown only if there are unclaimed tips -->
+            <button class="action-button" id="claimTipsButton" onclick="claimTips()" style="display: none;">Claim Tips</button>
         </div>
     </div>
 
@@ -139,8 +142,35 @@
 
                         // Show the user info section
                         document.getElementById('userInfo').style.display = 'block';
+
+                        // Show the "Claim Tips" button if there are unclaimed tips
+                        if (data.tips > 0) {
+                            document.getElementById('claimTipsButton').style.display = 'block';
+                        } else {
+                            document.getElementById('claimTipsButton').style.display = 'none';
+                        }
                     })
                     .catch(error => console.error('Error fetching user info:', error));
+            }
+        };
+
+        // Claim tips function
+        const claimTips = () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                const accessToken = user.access_token;
+                fetch(`https://api.slin.dev/grab/v1/claim_currency?key=tips&access_token=${accessToken}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Update the owned coins with the new amount
+                            document.getElementById('ownedCoins').textContent = data.currency;
+                            // Hide the "Claim Tips" button after successful claim
+                            document.getElementById('claimTipsButton').style.display = 'none';
+                            alert("Tips successfully claimed!");
+                        }
+                    })
+                    .catch(error => console.error('Error claiming tips:', error));
             }
         };
 
