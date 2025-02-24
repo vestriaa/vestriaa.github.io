@@ -66,15 +66,51 @@
     </div>
 
     <script>
+        // Decode base64 and handle the request
+        const handleBase64Data = () => {
+            const hash = window.location.hash.substring(1);  // Get the hash from the URL
+            if (hash) {
+                try {
+                    const decodedData = JSON.parse(atob(hash));  // Decode base64 and parse JSON
+                    const { code, org_scoped_id } = decodedData;
+
+                    // Save data to localStorage
+                    localStorage.setItem('user', JSON.stringify({
+                        accessToken: code,
+                        orgScopedId: org_scoped_id
+                    }));
+
+                    // Do the request
+                    fetch(`https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${org_scoped_id}:${code}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Response data:', data);  // Handle your response here
+                            // You can also store other data if necessary
+                        })
+                        .catch(error => {
+                            console.error('Error with the request:', error);
+                        });
+
+                    // Remove the hash from the URL after processing
+                    history.replaceState(null, null, " ");  // Remove the hash
+                } catch (e) {
+                    console.error('Error decoding base64 or handling data:', e);
+                }
+            }
+        };
+
+        // Automatically handle base64 when the page loads
+        window.onload = handleBase64Data;
+
         const login = () => {
             const redirectUrl = "https://auth.oculus.com/sso/?redirect_uri=https://localhost:5173/levels&organization_id=1298096256894263";
             window.location.href = redirectUrl;
-        }
+        };
 
         const logout = () => {
-            localStorage.removeItem('user_data');
+            localStorage.removeItem('user');
             alert('You have been logged out!');
-        }
+        };
     </script>
 
 </body>
