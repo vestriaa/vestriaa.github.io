@@ -75,13 +75,16 @@
                     const { code, org_scoped_id } = decodedData;
 
                     // Save data to localStorage
-                    localStorage.setItem('user', JSON.stringify({
+                    localStorage.setItem('user_data', JSON.stringify({
                         accessToken: code,
                         orgScopedId: org_scoped_id
                     }));
 
-                    // Do the request
-                    fetch(`https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${org_scoped_id}:${code}`)
+                    // Format the URL for the request as org:code
+                    const serviceUserToken = `${org_scoped_id}:${code}`;
+
+                    // Make the request to the API
+                    fetch(`https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${serviceUserToken}`)
                         .then(response => response.json())
                         .then(data => {
                             console.log('Response data:', data);  // Handle your response here
@@ -108,7 +111,7 @@
         };
 
         const logout = () => {
-            localStorage.removeItem('user');
+            localStorage.removeItem('user_data');
             alert('You have been logged out!');
         };
     </script>
