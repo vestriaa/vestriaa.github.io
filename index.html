@@ -66,13 +66,16 @@
                     .then(response => response.json())
                     .then(data => {
                         console.log('API Response:', data);
-                        localStorage.setItem('user', JSON.stringify(data));  // Store API response
+                        // Store the API response data in localStorage
+                        localStorage.setItem('user', JSON.stringify(data));  // Save user data to localStorage
+                        // After storing, update the UI for logged-in state
+                        checkLoginStatus(); // Update buttons based on login status
                     })
                     .catch(error => {
                         console.error('Error making API request:', error);
                     });
 
-                // Store the decoded data in localStorage
+                // Store the decoded data in localStorage (before the API request)
                 localStorage.setItem('decodedData', JSON.stringify(decodedData));
 
                 // Remove the hash from the URL after processing
