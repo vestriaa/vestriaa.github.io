@@ -74,6 +74,21 @@
         #loginButton {
             display: none;
         }
+
+        /* User info container (when logged in) */
+        .user-info {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .user-info p {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +98,14 @@
         <!-- Buttons are initially styled to be hidden or shown based on login status -->
         <button class="action-button" id="loginButton" onclick="login()">Login</button>
         <button class="action-button" id="logoutButton" onclick="logout()">Logout</button>
+
+        <!-- User info section, will only show when logged in -->
+        <div class="user-info" id="userInfo">
+            <h2>Welcome!</h2>
+            <p><strong>Owned GRAB Coins:</strong> <span id="ownedCoins">0</span></p>
+            <p><strong>Unclaimed Tips:</strong> <span id="unclaimedTips">0</span></p>
+            <p><strong>Total Tips:</strong> <span id="totalTips">0</span></p>
+        </div>
     </div>
 
     <script>
@@ -93,10 +116,31 @@
                 // User is logged in, hide login button and show logout button
                 document.getElementById('loginButton').style.display = 'none';
                 document.getElementById('logoutButton').style.display = 'block';
+                showUserInfo();
             } else {
                 // User is not logged in, show login button and hide logout button
                 document.getElementById('loginButton').style.display = 'block';
                 document.getElementById('logoutButton').style.display = 'none';
+            }
+        };
+
+        // Show user info (Owned GRAB Coins, Unclaimed Tips, Total Tips)
+        const showUserInfo = () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                const accessToken = user.access_token; // Get the access token from the stored data
+                fetch(`https://api.slin.dev/grab/v1/get_user_currency_info?access_token=${accessToken}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update the user info displayed
+                        document.getElementById('ownedCoins').textContent = data.currency;
+                        document.getElementById('unclaimedTips').textContent = data.tips;
+                        document.getElementById('totalTips').textContent = data.tips_total;
+
+                        // Show the user info section
+                        document.getElementById('userInfo').style.display = 'block';
+                    })
+                    .catch(error => console.error('Error fetching user info:', error));
             }
         };
 
@@ -127,6 +171,7 @@
                             localStorage.setItem('user', JSON.stringify(data));
 
                             // You can also store other data if necessary
+                            checkLoginStatus();  // Check login status to update UI
                         })
                         .catch(error => {
                             console.error('Error with the request:', error);
