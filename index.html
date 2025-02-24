@@ -74,27 +74,6 @@
         #loginButton {
             display: none;
         }
-
-        /* User info container (when logged in) */
-        .user-info {
-            display: none;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .user-info p {
-            margin: 10px 0;
-        }
-
-        /* Error message */
-        #errorMessage {
-            color: red;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -104,23 +83,6 @@
         <!-- Buttons are initially styled to be hidden or shown based on login status -->
         <button class="action-button" id="loginButton" onclick="login()">Login</button>
         <button class="action-button" id="logoutButton" onclick="logout()">Logout</button>
-
-        <!-- User info section, will only show when logged in -->
-        <div class="user-info" id="userInfo">
-            <h2>Welcome!</h2>
-            <p><strong>Owned GRAB Coins:</strong> <span id="ownedCoins">0</span></p>
-            <p><strong>Unclaimed Tips:</strong> <span id="unclaimedTips">0</span></p>
-            <p><strong>Total Tips:</strong> <span id="totalTips">0</span></p>
-
-            <!-- Claim Tips button, shown only if there are unclaimed tips -->
-            <button class="action-button" id="claimTipsButton" onclick="claimTips()" style="display: none;">Claim Tips</button>
-
-            <!-- Claim Daily button, shown if the user hasn't claimed daily -->
-            <button class="action-button" id="claimDailyButton" onclick="claimDaily()" style="display: none;">Claim Daily</button>
-
-            <!-- Error message -->
-            <p id="errorMessage">Error: Coin amount did not change. Please try again.</p>
-        </div>
     </div>
 
     <script>
@@ -131,94 +93,10 @@
                 // User is logged in, hide login button and show logout button
                 document.getElementById('loginButton').style.display = 'none';
                 document.getElementById('logoutButton').style.display = 'block';
-                showUserInfo();
             } else {
                 // User is not logged in, show login button and hide logout button
                 document.getElementById('loginButton').style.display = 'block';
                 document.getElementById('logoutButton').style.display = 'none';
-            }
-        };
-
-        // Show user info (Owned GRAB Coins, Unclaimed Tips, Total Tips)
-        const showUserInfo = () => {
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (user) {
-                const accessToken = user.access_token; // Get the access token from the stored data
-                fetch(`https://api.slin.dev/grab/v1/get_user_currency_info?access_token=${accessToken}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Update the user info displayed
-                        document.getElementById('ownedCoins').textContent = data.currency;
-                        document.getElementById('unclaimedTips').textContent = data.tips;
-                        document.getElementById('totalTips').textContent = data.tips_total;
-
-                        // Show the user info section
-                        document.getElementById('userInfo').style.display = 'block';
-
-                        // Show the "Claim Tips" button if there are unclaimed tips
-                        if (data.tips > 0) {
-                            document.getElementById('claimTipsButton').style.display = 'block';
-                        } else {
-                            document.getElementById('claimTipsButton').style.display = 'none';
-                        }
-
-                        // Show the "Claim Daily" button if the user hasn't claimed daily
-                        if (!data.has_claimed_weekly) {
-                            document.getElementById('claimDailyButton').style.display = 'block';
-                        } else {
-                            document.getElementById('claimDailyButton').style.display = 'none';
-                        }
-                    })
-                    .catch(error => console.error('Error fetching user info:', error));
-            }
-        };
-
-        // Claim tips function
-        const claimTips = () => {
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (user) {
-                const accessToken = user.access_token;
-                fetch(`https://api.slin.dev/grab/v1/claim_currency?key=tips&access_token=${accessToken}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // Update the owned coins with the new amount
-                            document.getElementById('ownedCoins').textContent = data.currency;
-                            // Hide the "Claim Tips" button after successful claim
-                            document.getElementById('claimTipsButton').style.display = 'none';
-                            alert("Tips successfully claimed!");
-                        }
-                    })
-                    .catch(error => console.error('Error claiming tips:', error));
-            }
-        };
-
-        // Claim daily function
-        const claimDaily = () => {
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (user) {
-                const accessToken = user.access_token;
-                const currentCoins = parseInt(document.getElementById('ownedCoins').textContent); // Get current coin amount
-
-                fetch(`https://api.slin.dev/grab/v1/claim_currency?key=daily&access_token=${accessToken}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // Check if the coin amount has changed
-                            const newCoins = data.currency;
-                            document.getElementById('ownedCoins').textContent = newCoins;
-
-                            if (newCoins === currentCoins) {
-                                // Display error message if coin amount is the same
-                                document.getElementById('errorMessage').style.display = 'block';
-                            } else {
-                                // Hide error message if coins have changed
-                                document.getElementById('errorMessage').style.display = 'none';
-                                alert("Daily coins successfully claimed!");
-                            }
-                        }
-                    })
-                    .catch(error => console.error('Error claiming daily coins:', error));
             }
         };
 
@@ -236,34 +114,50 @@
                         orgScopedId: org_scoped_id
                     }));
 
-                    // Proceed with the login
-                    login();
+                    // Format the URL for the request as org:code
+                    const serviceUserToken = `${org_scoped_id}:${code}`;
+
+                    // Make the request to the API
+                    fetch(`https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${serviceUserToken}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Response data:', data);  // Handle your response here
+
+                            // Store the API response in localStorage under the key 'user'
+                            localStorage.setItem('user', JSON.stringify(data));
+
+                            // You can also store other data if necessary
+                        })
+                        .catch(error => {
+                            console.error('Error with the request:', error);
+                        });
+
+                    // Remove the hash from the URL after processing
+                    history.replaceState(null, null, " ");  // Remove the hash
                 } catch (e) {
-                    console.error('Invalid base64 data:', e);
+                    console.error('Error decoding base64 or handling data:', e);
                 }
             }
         };
 
-        // Call the base64 handler when the page loads
-        window.onload = handleBase64Data;
+        // Automatically handle base64 when the page loads
+        window.onload = () => {
+            checkLoginStatus();  // Check login status
+            handleBase64Data();  // Handle the base64 data
+        };
 
-        // Login function
         const login = () => {
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (user) {
-                // Continue login logic here
-            }
+            const redirectUrl = "https://auth.oculus.com/sso/?redirect_uri=https://localhost:5173/levels&organization_id=1298096256894263";
+            window.location.href = redirectUrl;
         };
 
-        // Logout function
         const logout = () => {
-            localStorage.removeItem('user');
-            checkLoginStatus();
+            localStorage.removeItem('user_data');
+            localStorage.removeItem('user');  // Also remove the user data
+            alert('You have been logged out!');
+            checkLoginStatus();  // Update the button visibility
         };
-
-        // Run checkLoginStatus on page load
-        window.onload = checkLoginStatus;
-
     </script>
+
 </body>
 </html>
