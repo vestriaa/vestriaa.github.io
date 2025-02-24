@@ -61,11 +61,25 @@
 
     <div class="content-container">
         <h1>Login</h1>
-        <button class="action-button" onclick="login()">Login</button>
-        <button class="action-button" onclick="logout()">Logout</button>
+        <button class="action-button" id="loginButton" onclick="login()">Login</button>
+        <button class="action-button" id="logoutButton" onclick="logout()">Logout</button>
     </div>
 
     <script>
+        // Check if the user is logged in by checking localStorage
+        const checkLoginStatus = () => {
+            const user = localStorage.getItem('user');
+            if (user) {
+                // User is logged in, hide login button and show logout button
+                document.getElementById('loginButton').style.display = 'none';
+                document.getElementById('logoutButton').style.display = 'block';
+            } else {
+                // User is not logged in, show login button and hide logout button
+                document.getElementById('loginButton').style.display = 'block';
+                document.getElementById('logoutButton').style.display = 'none';
+            }
+        };
+
         // Decode base64 and handle the request
         const handleBase64Data = () => {
             const hash = window.location.hash.substring(1);  // Get the hash from the URL
@@ -107,7 +121,10 @@
         };
 
         // Automatically handle base64 when the page loads
-        window.onload = handleBase64Data;
+        window.onload = () => {
+            checkLoginStatus();  // Check login status
+            handleBase64Data();  // Handle the base64 data
+        };
 
         const login = () => {
             const redirectUrl = "https://auth.oculus.com/sso/?redirect_uri=https://localhost:5173/levels&organization_id=1298096256894263";
@@ -118,6 +135,7 @@
             localStorage.removeItem('user_data');
             localStorage.removeItem('user');  // Also remove the user data
             alert('You have been logged out!');
+            checkLoginStatus();  // Update the button visibility
         };
     </script>
 
