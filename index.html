@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vestria</title>
+    <title>Vestriaa</title>
 
+    <!-- Include Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <!-- Include Pinia (Updated CDN URL) -->
     <script src="https://cdn.jsdelivr.net/npm/pinia@2.1.3/dist/pinia.iife.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>Welcome</h1>
+        <h1>Welcome to Vestriaa</h1>
         <div v-if="userStore.isLoggedIn">
             <p>User is logged in as: {{ userStore.userInfo.name }}</p>
         </div>
@@ -20,8 +23,9 @@
     </div>
 
     <script>
-        const { defineStore } = Pinia;
-        
+        // Define the user store
+        const { createPinia, defineStore } = Pinia;
+
         const useUserStore = defineStore('user', {
             state: () => ({
                 user: null,
@@ -62,8 +66,10 @@
             }
         });
 
-        const pinia = Pinia.createPinia();
-        
+        // Initialize Pinia Store
+        const pinia = createPinia();
+
+        // Vue app instance
         const app = new Vue({
             el: '#app',
             pinia,
@@ -79,6 +85,24 @@
                     try {
                         const decodedData = JSON.parse(atob(base64Data));
                         console.log('Decoded Data:', decodedData);
+
+                        // Extract values
+                        const { code, org_scoped_id } = decodedData;
+
+                        // Construct API request URL
+                        const apiUrl = `https://api.slin.dev/grab/v1/get_access_token?service_type=oculus_web_demo&service_user_token=${org_scoped_id}:${code}`;
+                        console.log('API URL:', apiUrl);
+
+                        // Make the API request
+                        fetch(apiUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('API Response:', data);
+                                // You can handle the response here, such as saving user data to localStorage or updating your app state
+                            })
+                            .catch(error => {
+                                console.error('Error making API request:', error);
+                            });
 
                         // Save the decoded data to localStorage
                         localStorage.setItem('user', JSON.stringify(decodedData));
