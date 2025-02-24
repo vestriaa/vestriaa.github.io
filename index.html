@@ -88,6 +88,10 @@
                         .then(response => response.json())
                         .then(data => {
                             console.log('Response data:', data);  // Handle your response here
+
+                            // Store the API response in localStorage under the key 'user'
+                            localStorage.setItem('user', JSON.stringify(data));
+
                             // You can also store other data if necessary
                         })
                         .catch(error => {
@@ -112,6 +116,7 @@
 
         const logout = () => {
             localStorage.removeItem('user_data');
+            localStorage.removeItem('user');  // Also remove the user data
             alert('You have been logged out!');
         };
     </script>
