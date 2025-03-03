@@ -1389,7 +1389,7 @@
             "Reduced the flickering of the text on the in game menu.",
             "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
             "The keyboard buttons now have haptics.",
-            "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+            "Removed \"watch\" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
         ]
     },
     {
@@ -1408,7 +1408,7 @@
             "Reduced the flickering of the text on the in game menu.",
             "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
             "The keyboard buttons now have haptics.",
-            "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+            "Removed \"watch\" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
         ]
     },
     {
@@ -1430,7 +1430,7 @@
         "changes": [
             "The menu will now always face you on the start (OpenXR is a bit limiting with this unfortunately :()",
             "Fixed the grid size sliders to allow holding trigger to change them",
-            "Added a "No levels" place holder if there is no level to load yet in the editor",
+            "Added a \"No levels\" place holder if there is no level to load yet in the editor",
             "Added an activity spinner to the publish confirm button (will still not be visible with the sidequest version for now...)",
             "Moved the keyboard for entering the username further back and lower",
             "Added a screen informing about the demo actually being the full version for now",
@@ -1442,7 +1442,7 @@
     {
         "version": "0.5.9",
         "changes": [
-            "CHANGED THE ANDROID PACKAGE IDENTIFIER: This means it will be installed next to the previous version. It is now called "com.slindev.grab_demo". Any unpublished levels will not be accessible in the new version! You can use a PC to move them over or finish and publish them on the old one. Let me know on discord if you need any help. You will also have to authenticate with Sidequest again when publishing.",
+            "CHANGED THE ANDROID PACKAGE IDENTIFIER: This means it will be installed next to the previous version. It is now called \"com.slindev.grab_demo\". Any unpublished levels will not be accessible in the new version! You can use a PC to move them over or finish and publish them on the old one. Let me know on discord if you need any help. You will also have to authenticate with Sidequest again when publishing.",
             "Fixed level uploads not working after 2h of playing",
             "Fixed cursor showing up inside the part picker"
         ]
@@ -1453,7 +1453,7 @@
             "Made some improvements around account linking for when there is an applab version",
             "Fixed the grappling anchors of other players pointing in the wrong direction",
             "Holding the oculus button to reset the playspace works in the main menu again (but not anywhere else in the game!)",
-            "Fixed objects in the distance, big objects and signs flickering by switching to use "reverse-z" projection",
+            "Fixed objects in the distance, big objects and signs flickering by switching to use \"reverse-z\" projection",
             "Fixed an issue that could cause the game to lag on the first launch",
             "Fixed an issue that allowed submitting a level without verifying it",
             "Publishing after verification will now close the menu instead of showing the publish button again"
@@ -1507,8 +1507,8 @@
         "changes": [
             "Hold trigger to select multiple objects at once!",
             "Interacting with something in the editor now requires to point at it first and then pressing trigger, before you could hold trigger and then move it into something.",
-            "Added "Add Tutorials" button to the playlist if it is empty to make getting started easier.",
-            "New editor "hands"."
+            "Added \"Add Tutorials\" button to the playlist if it is empty to make getting started easier.",
+            "New editor \"hands\"."
         ]
     },
     {
@@ -1544,7 +1544,7 @@
         "version": "0.4.2",
         "changes": [
             "Autosaves! You should still save your levels manually though, this is only meant for recovery if you forgot and won't always be up to date.",
-            "Added a "You have unsaved changes, do you want to save?" screen whenever changing the editor level or leaving the editor.",
+            "Added a \"You have unsaved changes, do you want to save?\" screen whenever changing the editor level or leaving the editor.",
             "UI pointers now use the hand center as origin instead of a position higher up, this fixes the offset when typing sign texts.",
             "Selecting objects in the editor will now always select the object closest to the hand if multiple objects overlap.",
             "Made the right hand less dominant when selecting objects, this allows selecting one of multiple overlapping objects by holding both hands inside and then using one hand to use a manipulator while the other hand keeps the selection alive.",
@@ -1569,7 +1569,7 @@
     {
         "version": "0.4.0",
         "changes": [
-            "Added 2 more "easy" levels made by Rad",
+            "Added 2 more \"easy\" levels made by Rad",
             "Made the 4th tutorial level less missleading and harder to cheat on",
             "New WIP lobby level made by Rad",
             "Checkpoints can now be used in the lobby",
@@ -1589,8 +1589,8 @@
         "changes": [
             "Switching between playing and building in the editor now uses the Y button to make it harder to press by accident",
             "Fixed voice glitching out when changing levels (and also some other situations)",
-            "Added a "Next Level" button for the host to go to the next level without everyone finishing the current one"
-            "Moved "Back to Main Menu" and "Back to Lobby" to the very bottom of all menus to separate them more from other options",
+            "Added a \"Next Level\" button for the host to go to the next level without everyone finishing the current one",
+            "Moved \"Back to Main Menu\" and \"Back to Lobby\" to the very bottom of all menus to separate them more from other options",
             "Added a respawn button to the menu to let you go back to the last checkpoint",
             "Decreased player head size (it was way too big and kept pushing player off things they were climbing)",
             "Made sliding down ice work better"
@@ -1599,12 +1599,12 @@
     {
         "version": "0.3.1",
         "changes": [
-            "Added 4 new "easy" levels (made by Rad)",
+            "Added 4 new \"easy\" levels (made by Rad)",
             "Made tutorial level 5 (ice) easier",
             "Fixed the order of community maps to show the newest at the top",
             "Fixed server passwords not working correctly",
             "Fixed joining a server that is verifying a level",
-            "Fixed crash when pressing "play" on empty playlist"
+            "Fixed crash when pressing \"play\" on empty playlist"
         ]
     },
     {
@@ -1615,7 +1615,7 @@
             "Fixed smooth rotation speed getting reset to 0 on every launch",
             "Fixed the finish triggering if the player is below it",
             "Fixed pressing the publish button showing the success screen without actually publishing",
-            "Added an easy level ("Easy Tower")"
+            "Added an easy level (\"Easy Tower\")"
         ]
     },
     {
