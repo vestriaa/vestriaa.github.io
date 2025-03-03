@@ -1573,7 +1573,7 @@
             "Made the 4th tutorial level less missleading and harder to cheat on",
             "New WIP lobby level made by Rad",
             "Checkpoints can now be used in the lobby",
-            "Fixed some cases when creating or joining a server failed but the game still showed "connecting"",
+            "Fixed some cases when creating or joining a server failed but the game still showed \"connecting\"",
             "Made the start and end marker much more visible",
             "Fixed the players head and hands not getting effected by fog in the editor",
             "Tweaked the shading to add some more depth to everything",
