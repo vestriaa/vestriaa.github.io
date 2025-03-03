@@ -1380,6 +1380,7 @@
             "Fixed different multithreading issues and made level uploading asynchroneous.",
             "Made the level publish flow with sidequest a bit more smooth.",
             "Fixed the UI flickering on transitions."
+        ]
     },
     {
         "version": "0.6.1",
@@ -1389,6 +1390,7 @@
             "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
             "The keyboard buttons now have haptics.",
             "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+        ]
     },
     {
         "version": "0.6.0",
@@ -1397,6 +1399,7 @@
             "Added a block type that will disappear (and eventually respawn) when interacting with it.",
             "The lobby menus can not be interacted with anymore if there is no line of sight.",
             "Fixed a problem with players that join the editor spawning in the wrong position."
+        ]
     },
     {
         "version": "0.5.12",
@@ -1406,6 +1409,7 @@
             "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
             "The keyboard buttons now have haptics.",
             "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+        ]
     },
     {
         "version": "0.5.11",
@@ -1419,6 +1423,7 @@
             "The connection error message will not show anymore if the user was just too quick to start searching or hosting",
             "Fixed the username prompt not showing up on first launch",
             "Added a watch to left wrist with time spent in a level and current movement speed"
+        ]
     },
     {
         "version": "0.5.10",
@@ -1432,6 +1437,7 @@
             "Added a screen for service status information and other things that can be updated at any time",
             "The menu now shows the demo logo",
             "Updated the server browser design and made it show the servers current level"
+        ]
     },
     {
         "version": "0.5.9",
@@ -1439,6 +1445,7 @@
             "CHANGED THE ANDROID PACKAGE IDENTIFIER: This means it will be installed next to the previous version. It is now called "com.slindev.grab_demo". Any unpublished levels will not be accessible in the new version! You can use a PC to move them over or finish and publish them on the old one. Let me know on discord if you need any help. You will also have to authenticate with Sidequest again when publishing.",
             "Fixed level uploads not working after 2h of playing",
             "Fixed cursor showing up inside the part picker"
+        ]
     },
     {
         "version": "0.5.8",
@@ -1450,6 +1457,7 @@
             "Fixed an issue that could cause the game to lag on the first launch",
             "Fixed an issue that allowed submitting a level without verifying it",
             "Publishing after verification will now close the menu instead of showing the publish button again"
+        ]
     },
     {
         "version": "0.5.7",
@@ -1459,6 +1467,7 @@
             "Improved error handling in case of connection issues.",
             "Fixed a crash that could happen whenever a text changed somewhere.",
             "New user system!"
+        ]
     },
     {
         "version": "0.5.6",
@@ -1468,6 +1477,7 @@
             "Switched to the new logo in the game.",
             "Removed smooth texture transitions.",
             "Start and finish are now effected by the fog."
+        ]
     },
     {
         "version": "0.5.5",
@@ -1475,12 +1485,14 @@
             "Switched to use OpenXR. This will hopefully provide better hardware support in the future and make things easier to maintain.",
             "Improved support for Valve Index controllers on PC (grabbing still needs some polishing, pressing the left stick opens the menu).",
             "Improved support for HTC Vive controllers on PC (it works, but I can't really recommend playing with them...)"
+        ]
     },
     {
         "version": "0.5.4",
         "changes": [
             "Fixed level sort order for community levels",
             "Fixed an internal issue with uploaded levels having some wrong data"
+        ]
     },
     {
         "version": "0.5.3",
@@ -1488,6 +1500,7 @@
             "Increased the fog distance to match the clipping range and adjusted how it fades in.",
             "Decreased lava brightness.",
             "Fixed objects scale sometimes getting reset if only one is selected and grabbed with two hands."
+        ]
     },
     {
         "version": "0.5.2",
@@ -1496,6 +1509,7 @@
             "Interacting with something in the editor now requires to point at it first and then pressing trigger, before you could hold trigger and then move it into something.",
             "Added "Add Tutorials" button to the playlist if it is empty to make getting started easier.",
             "New editor "hands"."
+        ]
     },
     {
         "version": "0.5.1",
@@ -1505,6 +1519,7 @@
             "Added an anchor model.",
             "Made the grappling hook pull in a bit slower.",
             "Made the hookable surface also climbable."
+        ]
     },
     {
         "version": "0.5.0",
@@ -1517,11 +1532,13 @@
             "Grabbing will no longer change the active hand for UI input.",
             "The fog color now better matches the sky color.",
             "Fixed a crash when opening the community level list and closing it before it finished loading."
+        ]
     },
     {
         "version": "0.4.3",
         "changes": [
             "New Textures!"
+        ]
     },
     {
         "version": "0.4.2",
@@ -1537,6 +1554,7 @@
             "Disabled fog for part picker and local player in the editor, this helps to see what is what when going big.",
             "Moved snapping sliders to the top of the part picker to prevent controller occlusion issues.",
             "Using the snapping sliders now requires the trigger to be pressed, hopefully preventing most unintentional snapping changes."
+        ]
     },
     {
         "version": "0.4.1",
@@ -1546,6 +1564,7 @@
             "Made the default snapping values that I added in the last release actually work...",
             "Added laser pointer for menus",
             "Fixed crash when publishing a level."
+        ]
     },
     {
         "version": "0.4.0",
@@ -1563,6 +1582,7 @@
             "Made the lava animation less extreme (and hopefully less disturbing for players)",
             "Made all api calls async, this reduces the time the game freezes on loading community levels a lot",
             "Added a spinner to the level browser to indicate that it is actually loading something"
+        ]
     },
     {
         "version": "0.3.2",
@@ -1574,6 +1594,7 @@
             "Added a respawn button to the menu to let you go back to the last checkpoint",
             "Decreased player head size (it was way too big and kept pushing player off things they were climbing)",
             "Made sliding down ice work better"
+        ]
     },
     {
         "version": "0.3.1",
@@ -1584,6 +1605,7 @@
             "Fixed server passwords not working correctly",
             "Fixed joining a server that is verifying a level",
             "Fixed crash when pressing "play" on empty playlist"
+        ]
     },
     {
         "version": "0.3.0",
@@ -1594,11 +1616,13 @@
             "Fixed the finish triggering if the player is below it",
             "Fixed pressing the publish button showing the success screen without actually publishing",
             "Added an easy level ("Easy Tower")"
+        ]
     },
     {
         "version": "0.2.3",
         "changes": [
             "Fixed copied objects in the editor losing their collision for everyone but the player that copied it, until grabbed again."
+        ]
     },
     {
         "version": "0.2.2",
