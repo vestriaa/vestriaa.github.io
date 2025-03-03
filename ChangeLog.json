@@ -1361,5 +1361,253 @@
             "The host can now also push off other players",
             "Holding on to another player will not allow to float midair anymore"
         ]
+    },
+    {
+        "version": "0.6.2",
+        "changes": [
+            "Added grappling gun shoot and impact sound, with variation when hitting something that can't be hooked into.",
+            "Added grappling vibration feedback.",
+            "Added player land sound.",
+            "Added player impact sound when hitting a wall.",
+            "Added player step sounds.",
+            "Added player slide sound.",
+            "Added player death sound.",
+            "Updated player grab sound.",
+            "Added menu sounds.",
+            "Added a sound when finishing a level.",
+            "Fixed a bug with disappearing blocks not getting removed correctly. This could show as a collision in empty space as well as some random issues in the editor.",
+            "Fixed the grappling hook getting shot when pressing a ui button that closes the panel.",
+            "Fixed different multithreading issues and made level uploading asynchroneous.",
+            "Made the level publish flow with sidequest a bit more smooth.",
+            "Fixed the UI flickering on transitions."
+    },
+    {
+        "version": "0.6.1",
+        "changes": [
+            "The UI pointer will now be blocked by the UI plane it hits first and not also effect the UI behind it.",
+            "Reduced the flickering of the text on the in game menu.",
+            "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
+            "The keyboard buttons now have haptics.",
+            "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+    },
+    {
+        "version": "0.6.0",
+        "changes": [
+            "Added grappling blocks that are deadly when touched.",
+            "Added a block type that will disappear (and eventually respawn) when interacting with it.",
+            "The lobby menus can not be interacted with anymore if there is no line of sight.",
+            "Fixed a problem with players that join the editor spawning in the wrong position."
+    },
+    {
+        "version": "0.5.12",
+        "changes": [
+            "Fixed joining a password protected server",
+            "Reduced the flickering of the text on the in game menu.",
+            "All buttons now activate on click and not when letting go, this improves typing on the keyboard a lot.",
+            "The keyboard buttons now have haptics.",
+            "Removed "watch" displaying current level time and movement speed as it was causing some major performance issues. (It will come back, but I need to figure the performance problems out first)."
+    },
+    {
+        "version": "0.5.11",
+        "changes": [
+            "Usernames are now displayed on every players chest",
+            "Fixed the initial player height on spawn (player could fall thorugh the floor or do some other unexpected movement before), there is still some strangeness left, but it's much better",
+            "When jumping up fast enough and the feet go through geometry it will no longer stop the jump",
+            "Very steep surfaces will now just cause the player to fall down, this prevents an issue with extreme fallspeeds when sliding off something as well as some other annoying behavior in different situation.",
+            "Steep surfaces will not let the player move up as easily anymore as before.",
+            "Ramps work much better now",
+            "The connection error message will not show anymore if the user was just too quick to start searching or hosting",
+            "Fixed the username prompt not showing up on first launch",
+            "Added a watch to left wrist with time spent in a level and current movement speed"
+    },
+    {
+        "version": "0.5.10",
+        "changes": [
+            "The menu will now always face you on the start (OpenXR is a bit limiting with this unfortunately :()",
+            "Fixed the grid size sliders to allow holding trigger to change them",
+            "Added a "No levels" place holder if there is no level to load yet in the editor",
+            "Added an activity spinner to the publish confirm button (will still not be visible with the sidequest version for now...)",
+            "Moved the keyboard for entering the username further back and lower",
+            "Added a screen informing about the demo actually being the full version for now",
+            "Added a screen for service status information and other things that can be updated at any time",
+            "The menu now shows the demo logo",
+            "Updated the server browser design and made it show the servers current level"
+    },
+    {
+        "version": "0.5.9",
+        "changes": [
+            "CHANGED THE ANDROID PACKAGE IDENTIFIER: This means it will be installed next to the previous version. It is now called "com.slindev.grab_demo". Any unpublished levels will not be accessible in the new version! You can use a PC to move them over or finish and publish them on the old one. Let me know on discord if you need any help. You will also have to authenticate with Sidequest again when publishing.",
+            "Fixed level uploads not working after 2h of playing",
+            "Fixed cursor showing up inside the part picker"
+    },
+    {
+        "version": "0.5.8",
+        "changes": [
+            "Made some improvements around account linking for when there is an applab version",
+            "Fixed the grappling anchors of other players pointing in the wrong direction",
+            "Holding the oculus button to reset the playspace works in the main menu again (but not anywhere else in the game!)",
+            "Fixed objects in the distance, big objects and signs flickering by switching to use "reverse-z" projection",
+            "Fixed an issue that could cause the game to lag on the first launch",
+            "Fixed an issue that allowed submitting a level without verifying it",
+            "Publishing after verification will now close the menu instead of showing the publish button again"
+    },
+    {
+        "version": "0.5.7",
+        "changes": [
+            "Hands are now hidden when opening the oculus menu (as per VRC.Quest.Input.4).",
+            "Fixed an issue with level creators and title overlapping on the level browser if the level has a title that is longer than one line.",
+            "Improved error handling in case of connection issues.",
+            "Fixed a crash that could happen whenever a text changed somewhere.",
+            "New user system!"
+    },
+    {
+        "version": "0.5.6",
+        "changes": [
+            "The level list is now paginated to support thousands of levels (was limited to 100 levels before).",
+            "Fixed an issue with UI elements disappearing when looking from at them from some direction when they shouldn't.",
+            "Switched to the new logo in the game.",
+            "Removed smooth texture transitions.",
+            "Start and finish are now effected by the fog."
+    },
+    {
+        "version": "0.5.5",
+        "changes": [
+            "Switched to use OpenXR. This will hopefully provide better hardware support in the future and make things easier to maintain.",
+            "Improved support for Valve Index controllers on PC (grabbing still needs some polishing, pressing the left stick opens the menu).",
+            "Improved support for HTC Vive controllers on PC (it works, but I can't really recommend playing with them...)"
+    },
+    {
+        "version": "0.5.4",
+        "changes": [
+            "Fixed level sort order for community levels",
+            "Fixed an internal issue with uploaded levels having some wrong data"
+    },
+    {
+        "version": "0.5.3",
+        "changes": [
+            "Increased the fog distance to match the clipping range and adjusted how it fades in.",
+            "Decreased lava brightness.",
+            "Fixed objects scale sometimes getting reset if only one is selected and grabbed with two hands."
+    },
+    {
+        "version": "0.5.2",
+        "changes": [
+            "Hold trigger to select multiple objects at once!",
+            "Interacting with something in the editor now requires to point at it first and then pressing trigger, before you could hold trigger and then move it into something.",
+            "Added "Add Tutorials" button to the playlist if it is empty to make getting started easier.",
+            "New editor "hands"."
+    },
+    {
+        "version": "0.5.1",
+        "changes": [
+            "Fixed the grappling hooks not resetting after respawn.",
+            "Added a texture for the rope.",
+            "Added an anchor model.",
+            "Made the grappling hook pull in a bit slower.",
+            "Made the hookable surface also climbable."
+    },
+    {
+        "version": "0.5.0",
+        "changes": [
+            "Grappling hooks!",
+            "Added a green material to hook into.",
+            "Added a wood material that can be climbed.",
+            "Added a new tutorial level for the gappling hook.",
+            "Objects in the part picker in the editor are now all centered.",
+            "Grabbing will no longer change the active hand for UI input.",
+            "The fog color now better matches the sky color.",
+            "Fixed a crash when opening the community level list and closing it before it finished loading."
+    },
+    {
+        "version": "0.4.3",
+        "changes": [
+            "New Textures!"
+    },
+    {
+        "version": "0.4.2",
+        "changes": [
+            "Autosaves! You should still save your levels manually though, this is only meant for recovery if you forgot and won't always be up to date.",
+            "Added a "You have unsaved changes, do you want to save?" screen whenever changing the editor level or leaving the editor.",
+            "UI pointers now use the hand center as origin instead of a position higher up, this fixes the offset when typing sign texts.",
+            "Selecting objects in the editor will now always select the object closest to the hand if multiple objects overlap.",
+            "Made the right hand less dominant when selecting objects, this allows selecting one of multiple overlapping objects by holding both hands inside and then using one hand to use a manipulator while the other hand keeps the selection alive.",
+            "A newly created object now always starts out grabbed (before it could happen that a new sign would start out in edit mode or an object was created but then just stayed there because the hand never actually overlapped it).",
+            "The Part picker no longer opens while in edit mode for an object (when changing the text of a sign).",
+            "Fixed player being able to move their hands from a grabbed position and holding on to nothing as a result (shortening the distance for a next grab or jump a lot).",
+            "Disabled fog for part picker and local player in the editor, this helps to see what is what when going big.",
+            "Moved snapping sliders to the top of the part picker to prevent controller occlusion issues.",
+            "Using the snapping sliders now requires the trigger to be pressed, hopefully preventing most unintentional snapping changes."
+    },
+    {
+        "version": "0.4.1",
+        "changes": [
+            "Maybe fixed the camera sometimes getting messed up in the editor.",
+            "The game now asks for a player name on startup instead of assigning a random one.",
+            "Made the default snapping values that I added in the last release actually work...",
+            "Added laser pointer for menus",
+            "Fixed crash when publishing a level."
+    },
+    {
+        "version": "0.4.0",
+        "changes": [
+            "Added 2 more "easy" levels made by Rad",
+            "Made the 4th tutorial level less missleading and harder to cheat on",
+            "New WIP lobby level made by Rad",
+            "Checkpoints can now be used in the lobby",
+            "Fixed some cases when creating or joining a server failed but the game still showed "connecting"",
+            "Made the start and end marker much more visible",
+            "Fixed the players head and hands not getting effected by fog in the editor",
+            "Tweaked the shading to add some more depth to everything",
+            "Fixed the editor forgetting about snap settings when switching from play to edit mode",
+            "Enabled snapping by default in the editor (0.1m, 5°)",
+            "Made the lava animation less extreme (and hopefully less disturbing for players)",
+            "Made all api calls async, this reduces the time the game freezes on loading community levels a lot",
+            "Added a spinner to the level browser to indicate that it is actually loading something"
+    },
+    {
+        "version": "0.3.2",
+        "changes": [
+            "Switching between playing and building in the editor now uses the Y button to make it harder to press by accident",
+            "Fixed voice glitching out when changing levels (and also some other situations)",
+            "Added a "Next Level" button for the host to go to the next level without everyone finishing the current one"
+            "Moved "Back to Main Menu" and "Back to Lobby" to the very bottom of all menus to separate them more from other options",
+            "Added a respawn button to the menu to let you go back to the last checkpoint",
+            "Decreased player head size (it was way too big and kept pushing player off things they were climbing)",
+            "Made sliding down ice work better"
+    },
+    {
+        "version": "0.3.1",
+        "changes": [
+            "Added 4 new "easy" levels (made by Rad)",
+            "Made tutorial level 5 (ice) easier",
+            "Fixed the order of community maps to show the newest at the top",
+            "Fixed server passwords not working correctly",
+            "Fixed joining a server that is verifying a level",
+            "Fixed crash when pressing "play" on empty playlist"
+    },
+    {
+        "version": "0.3.0",
+        "changes": [
+            "Fixed almost vertical surfaces giving player superspeed, this also changes behavior on other angled surfaces",
+            "Disabled doppler effect when in editor and reduced it in the game",
+            "Fixed smooth rotation speed getting reset to 0 on every launch",
+            "Fixed the finish triggering if the player is below it",
+            "Fixed pressing the publish button showing the success screen without actually publishing",
+            "Added an easy level ("Easy Tower")"
+    },
+    {
+        "version": "0.2.3",
+        "changes": [
+            "Fixed copied objects in the editor losing their collision for everyone but the player that copied it, until grabbed again."
+    },
+    {
+        "version": "0.2.2",
+        "changes": [
+            "A maximum number of checkpoints can be specified when saving a level.",
+            "Players can create checkpoints from the pause menu, only when on solid ground and not moving.",
+            "When dying, players will respawn at their last checkpoint location.",
+            "Added Discord invite URL to lobby.",
+            "Updated the clients in the editor menu to match the design of all the others."
+        ]
     }
 ]
