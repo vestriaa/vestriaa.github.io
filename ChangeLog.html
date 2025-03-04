@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(#5f8bc2, #cfe0ea, #5f8bc2);
+            color: #327DAF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            overflow: auto;
+            transition: background-image 0.3s, filter 0.3s;
+        }
+        .changelog {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: left;
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: background 0.3s;
+        }
+        h1 {
+            color: #8b8ed3;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .version {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #5f86a6;
+            font-family: 'Roboto', sans-serif;
+        }
+        ul {
+            padding-left: 18px;
+            list-style-type: disc;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+            color: #5d8eb7;
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+        .changelog::-webkit-scrollbar {
+            width: 10px;
+        }
+        .changelog::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        .changelog::-webkit-scrollbar-thumb {
+            background: #5d8eb7;
+            border-radius: 10px;
+        }
+        .changelog::-webkit-scrollbar-thumb:hover {
+            background: #327DAF;
+        }
+    </style>
+</head>
+<body>
+    <div class="changelog">
+        <h1>Changes</h1>
+        <div id="changelog-content">Loading...</div>
+    </div>
+    
+    <script>
+        async function fetchChangelog() {
+            try {
+                const response = await fetch('ChangeLog.json');
+                const changelog = await response.json();
+                const container = document.getElementById('changelog-content');
+                container.innerHTML = '';
+                
+                changelog.forEach(entry => {
+                    const versionEl = document.createElement('div');
+                    versionEl.className = 'version';
+                    versionEl.textContent = `Version ${entry.version}`;
+                    
+                    const changeList = document.createElement('ul');
+                    entry.changes.forEach(change => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = change.replace(/\n/g, '<br>');
+                        changeList.appendChild(listItem);
+                    });
+                    
+                    container.appendChild(versionEl);
+                    container.appendChild(changeList);
+                });
+            } catch (error) {
+                document.getElementById('changelog-content').textContent = 'Failed to load changelog.';
+            }
+        }
+        
+        fetchChangelog();
+    </script>
+</body>
+</html>
