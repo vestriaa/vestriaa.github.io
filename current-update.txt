@@ -1,13 +1,45 @@
-0.57.0 - Forfeiting, inactivity and more
+v0.58.3 - Saint Patrick's Day Update
 
 Changes:
-New lobby!
-New item pack.
-Added a "Get Community Badge" button to the character screen with simple steps on how to join the discord server and claim it.
-Added a forfeit button when playing levels, to indicate to the host that you don't intend to beat the current level.
-If someone is on the dashboard or takes off the headset for 30 seconds they will now be marked as inactive and ignored for automatic level changing.
-Added a sonic boom when breaking the sound barrier.
-Fixed grouping / ungrouping causing the objects to teleport.
-Fixed controller vibrations on the editor wrist menu playing on the wrong controller in some cases.
-Fixed a crash when switching quickly between leaderboard and player list in the in-game menu.
-Fixed wrong checkpoint count when verifying a level for publishing.
+Added a shamrock badge to the shop in anticipation of Saint Patrick's Day!
+Restarting a level will now reset all animations that have not been changed by a shared trigger.
+Triggers are no longer shared by default.
+Modded gravity blocks will now be restricted to roughly 100 G, hopefully fixing people getting sent into the void.
+Fixed not being able to create prefabs from blocks with specularity.
+
+
+
+v0.58.2 - Prefab Restrictions & Referral Limits
+
+Changes:
+The setting if prefabs can be saved or not is now on the prefab screen and everyone can see the current setting.
+Fixed an issue that allowed for prefabs that could break the collision for everyone.
+Prevent modded colors in prefabs.
+Prevent loading of blocks with negative scales.
+Prevent some 0 complexity prefabs.
+Referrals are now limited to 5 and the code can no longer be regenerated.
+
+
+
+v0.58.1 - Trigger Fixes & Improvements
+
+Changes:
+Fixed a specific trigger configuration making whoever triggers it crash ("ban hammer").
+Fixed prefabs not being displayed correctly.
+Fixed prefabs that include triggers that are connected to blocks in the prefab not working correctly for other players after creation.
+Improved the selection when moving out of a group.
+
+
+
+v0.58.0 - Trigger Update!
+
+Changes:
+New Lobby and new cosmetics!
+New trigger block type that can start, stop or reverse one or more animations when interacted with.
+You can now save things you built as prefabs and reuse them in other levels.
+You can now select a group, move the right thumbstick up and click it to move into a group to make some changes without ungrouping. Move the thumbstick down and click to move back out.
+Players can now refer new players with a referral code and both get GRAB coins on a successful referral.
+Fixed merge glitch that would turn you into other players and cause all kind of weirdness.
+Fixed breaking blocks not respawning when switching to publishing a level.
+Fixed level info not updating immediately on the pause menu when editing it.
+Fixed fly glitch with consumables.
