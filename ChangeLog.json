@@ -1,5 +1,49 @@
 [
     {
+        "version": "0.58.3",
+        "changes": [
+            "Added a shamrock badge to the shop in anticipation of Saint Patrick's Day!",
+            "Restarting a level will now reset all animations that have not been changed by a shared trigger.",
+            "Triggers are no longer shared by default.",
+            "Modded gravity blocks will now be restricted to roughly 100 G, hopefully fixing people getting sent into the void.",
+            "Fixed not being able to create prefabs from blocks with specularity."
+        ]
+    },
+    {
+        "version": "0.58.2",
+        "changes": [
+            "The setting if prefabs can be saved or not is now on the prefab screen and everyone can see the current setting.",
+            "Fixed an issue that allowed for prefabs that could break the collision for everyone.",
+            "Prevent modded colors in prefabs.",
+            "Prevent loading of blocks with negative scales.",
+            "Prevent some 0 complexity prefabs.",
+            "Referrals are now limited to 5 and the code can no longer be regenerated."
+        ]
+    },
+    {
+        "version": "0.58.1",
+        "changes": [
+            "Fixed a specific trigger configuration making whoever triggers it crash (\"ban hammer\").",
+            "Fixed prefabs not being displayed correctly.",
+            "Fixed prefabs that include triggers that are connected to blocks in the prefab not working correctly for other players after creation.",
+            "Improved the selection when moving out of a group."
+        ]
+    },
+    {
+        "version": "0.58.0",
+        "changes": [
+            "New Lobby and new cosmetics!",
+            "New trigger block type that can start, stop or reverse one or more animations when interacted with.",
+            "You can now save things you built as prefabs and reuse them in other levels.",
+            "You can now select a group, move the right thumbstick up and click it to move into a group to make some changes without ungrouping. Move the thumbstick down and click to move back out.",
+            "Players can now refer new players with a referral code and both get GRAB coins on a successful referral.",
+            "Fixed merge glitch that would turn you into other players and cause all kind of weirdness.",
+            "Fixed breaking blocks not respawning when switching to publishing a level.",
+            "Fixed level info not updating immediately on the pause menu when editing it.",
+            "Fixed fly glitch with consumables."
+        ]
+    },
+    {
         "version": "0.57.0",
         "changes": [
             "New lobby!",
