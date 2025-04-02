@@ -1,3 +1,18 @@
+v0.58.5 - Back to Reality
+
+Changes:
+Sadly, april fools is already over now and the sounds are back to normal. Are you ready for the big update tomorrow?
+Fixed RNLogs.txt file not getting created.
+
+
+
+v0.58.4 - Sound Rework Update
+
+Changes:
+You asked for sounds, but there are already sounds in GRAB! So I figured it's time to rework most of the existing sounds to make them more noticeable and more personal.
+
+
+
 v0.58.3 - Saint Patrick's Day Update
 
 Changes:
