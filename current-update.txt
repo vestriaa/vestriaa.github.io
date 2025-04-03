@@ -1,60 +1,11 @@
-v0.58.5 - Back to Reality
+v0.59.0 - Particles and Sublevels
 
 Changes:
-Sadly, april fools is already over now and the sounds are back to normal. Are you ready for the big update tomorrow?
-Fixed RNLogs.txt file not getting created.
-
-
-
-v0.58.4 - Sound Rework Update
-
-Changes:
-You asked for sounds, but there are already sounds in GRAB! So I figured it's time to rework most of the existing sounds to make them more noticeable and more personal.
-
-
-
-v0.58.3 - Saint Patrick's Day Update
-
-Changes:
-Added a shamrock badge to the shop in anticipation of Saint Patrick's Day!
-Restarting a level will now reset all animations that have not been changed by a shared trigger.
-Triggers are no longer shared by default.
-Modded gravity blocks will now be restricted to roughly 100 G, hopefully fixing people getting sent into the void.
-Fixed not being able to create prefabs from blocks with specularity.
-
-
-
-v0.58.2 - Prefab Restrictions & Referral Limits
-
-Changes:
-The setting if prefabs can be saved or not is now on the prefab screen and everyone can see the current setting.
-Fixed an issue that allowed for prefabs that could break the collision for everyone.
-Prevent modded colors in prefabs.
-Prevent loading of blocks with negative scales.
-Prevent some 0 complexity prefabs.
-Referrals are now limited to 5 and the code can no longer be regenerated.
-
-
-
-v0.58.1 - Trigger Fixes & Improvements
-
-Changes:
-Fixed a specific trigger configuration making whoever triggers it crash ("ban hammer").
-Fixed prefabs not being displayed correctly.
-Fixed prefabs that include triggers that are connected to blocks in the prefab not working correctly for other players after creation.
-Improved the selection when moving out of a group.
-
-
-
-v0.58.0 - Trigger Update!
-
-Changes:
-New Lobby and new cosmetics!
-New trigger block type that can start, stop or reverse one or more animations when interacted with.
-You can now save things you built as prefabs and reuse them in other levels.
-You can now select a group, move the right thumbstick up and click it to move into a group to make some changes without ungrouping. Move the thumbstick down and click to move back out.
-Players can now refer new players with a referral code and both get GRAB coins on a successful referral.
-Fixed merge glitch that would turn you into other players and cause all kind of weirdness.
-Fixed breaking blocks not respawning when switching to publishing a level.
-Fixed level info not updating immediately on the pause menu when editing it.
-Fixed fly glitch with consumables.
+New hub lobby, showing off the new features and bringing back some community favorites!
+Added new easter themed cosmetics to the shop!
+Particle emitters that can be freely placed in levels.
+Triggers can now be used to link a level to your other published levels as sublevels.
+It is now possible to place up to 10 spawn circles that can be named to be used as spawns from sublevel triggers.
+Everyone can now see the current playlist.
+Shaders are now cached and reused between runs, reducing stutters after the first time playing.
+Fixed a bug causing blocks to stay behind when inside a group when switching the level.
