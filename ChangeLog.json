@@ -1,5 +1,31 @@
 [
     {
+        "version": "0.59.0",
+        "changes": [
+            "New hub lobby, showing off the new features and bringing back some community favorites!",
+            "Added new easter themed cosmetics to the shop!",
+            "Particle emitters that can be freely placed in levels.",
+            "Triggers can now be used to link a level to your other published levels as sublevels.",
+            "It is now possible to place up to 10 spawn circles that can be named to be used as spawns from sublevel triggers.",
+            "Everyone can now see the current playlist.",
+            "Shaders are now cached and reused between runs, reducing stutters after the first time playing.",
+            "Fixed a bug causing blocks to stay behind when inside a group when switching the level."
+        ]
+    },
+    {
+        "version": "0.58.5",
+        "changes": [
+            "Sadly, april fools is already over now and the sounds are back to normal. Are you ready for the big update tomorrow?",
+            "Fixed RNLogs.txt file not getting created."
+        ]
+    },
+    {
+        "version": "0.58.4",
+        "changes": [
+            "You asked for sounds, but there are already sounds in GRAB! So I figured it's time to rework most of the existing sounds to make them more noticeable and more personal."
+        ]
+    },
+    {
         "version": "0.58.3",
         "changes": [
             "Added a shamrock badge to the shop in anticipation of Saint Patrick's Day!",
