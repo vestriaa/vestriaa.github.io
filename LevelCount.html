@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      <title>Verified Level Quest</title>
+      <style>
+         body {
+         background-color: #121212;
+         color: white;
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         box-sizing: border-box;
+         overflow: hidden;
+         }
+         .wrapper {
+         width: 100%;
+         max-width: 600px;
+         text-align: center;
+         box-sizing: border-box;
+         padding: 20px;
+         margin: 0 auto;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .title {
+         font-size: 1.2em;
+         margin-bottom: 10px;
+         }
+         .progress-container {
+         background-color: #2e2e2e;
+         border-radius: 5px;
+         overflow: hidden;
+         position: relative;
+         height: 24px;
+         width: 100%;
+         max-width: 100%;
+         margin-bottom: 20px;
+         }
+         .progress-bar {
+         height: 100%;
+         background: linear-gradient(to right, #72be69, #f04b5c);
+         width: 0%;
+         transition: width 0.5s ease-in-out;
+         }
+         .labels {
+         display: flex;
+         justify-content: space-between;
+         font-size: 0.9em;
+         margin-top: 5px;
+         width: 100%;
+         max-width: 100%;
+         }
+         .button-container {
+         display: flex;
+         justify-content: center;
+         margin-bottom: 20px;
+         gap: 10px;
+         flex-direction: column;
+         align-items: center;
+         }
+         .button {
+         background-color: #2e2e2e;
+         color: white;
+         border: 2px solid #444;
+         border-radius: 12px;
+         padding: 10px 20px;
+         font-size: 1em;
+         cursor: pointer;
+         transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+         width: 120px;
+         text-align: center;
+         margin: 5px;
+         }
+         .button.active:hover {
+         background-color: #4caf50;
+         box-shadow: 0 0 15px rgba(72, 191, 46, 0.8);
+         transform: scale(1.05);
+         }
+         .button:not(.active):hover {
+         background-color: #444;
+         box-shadow: 0 0 15px rgba(92, 75, 92, 0.8);
+         transform: scale(1.05);
+         }
+         .refresh-button {
+         background-color: #333;
+         color: white;
+         border: 2px solid #444;
+         font-size: 1.1em;
+         padding: 12px 25px;
+         font-weight: bold;
+         margin-bottom: 20px;
+         transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+         width: 140px;
+         text-align: center;
+         border-radius: 12px;
+         }
+         .refresh-button:hover {
+         background-color: #444;
+         transform: scale(1.05);
+         box-shadow: 0 0 15px rgba(92, 75, 92, 0.8);
+         }
+         .countdown-container {
+         text-align: center;
+         margin-top: 20px;
+         }
+         .countdown {
+         font-size: 1.1em;
+         color: #f04b5c;
+         margin-top: 10px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="button-container">
+            <button class="refresh-button" id="refresh-button">REFRESH</button>
+         </div>
+         <div class="button-container">
+            <button class="button" id="verified-button">Verified</button>
+            <button class="button" id="all-button">All</button>
+         </div>
+         <div class="title">Levels</div>
+         <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+         </div>
+         <div class="labels">
+            <div id="goal-label">GOAL: Loading...</div>
+            <div id="level-label">Loading...</div>
+         </div>
+         <div class="countdown-container">
+            <div class="countdown" id="countdown-label">Auto-Refreshing in 03:00</div>
+         </div>
+      </div>
+      <script>
+         const verifiedButton = document.getElementById('verified-button');
+         const allButton = document.getElementById('all-button');
+         const refreshButton = document.getElementById('refresh-button');
+         const countdownLabel = document.getElementById('countdown-label');
+         
+         const refreshInterval = 180000;
+         let countdown = refreshInterval / 1000;
+         
+         async function updateProgress(type = 'ok_newest') {
+           try {
+             const response = await fetch(`https://api.slin.dev/grab/v1/total_level_count?type=${type}`);
+             const text = await response.text();
+             const current = parseInt(text.trim(), 10);
+         
+             if (!isNaN(current)) {
+               const goal = Math.ceil(current / 5000) * 5000;
+               const percent = Math.min(((current - (goal - 5000)) / 5000) * 100, 100);
+         
+               document.getElementById('goal-label').textContent = `GOAL: ${goal.toLocaleString()}`;
+               document.getElementById('level-label').textContent = `${current.toLocaleString()} Levels`;
+               document.getElementById('progress-bar').style.width = `${percent}%`;
+             } else {
+               throw new Error("Invalid level count.");
+             }
+           } catch (err) {
+             document.getElementById('goal-label').textContent = 'GOAL: Error';
+             document.getElementById('level-label').textContent = 'Levels: Error';
+             console.error('Fetch failed:', err);
+           }
+         }
+         
+         verifiedButton.addEventListener('click', () => {
+           verifiedButton.classList.add('active');
+           allButton.classList.remove('active');
+           updateProgress('ok_newest');
+         });
+         
+         allButton.addEventListener('click', () => {
+           allButton.classList.add('active');
+           verifiedButton.classList.remove('active');
+           updateProgress('newest');
+         });
+         
+         refreshButton.addEventListener('click', () => {
+           updateProgress(verifiedButton.classList.contains('active') ? 'ok_newest' : 'newest');
+         });
+         
+         function startCountdown() {
+           setInterval(() => {
+             countdown--;
+             const minutes = Math.floor(countdown / 60);
+             const seconds = countdown % 60;
+             countdownLabel.textContent = `Auto-Refreshing in ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+         
+             if (countdown <= 0) {
+               updateProgress(verifiedButton.classList.contains('active') ? 'ok_newest' : 'newest');
+               countdown = refreshInterval / 1000;
+             }
+           }, 1000);
+         }
+         
+         updateProgress('ok_newest');
+         verifiedButton.classList.add('active');
+         startCountdown();
+      </script>
+   </body>
+</html>
